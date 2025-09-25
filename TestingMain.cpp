@@ -4,8 +4,13 @@
 #include "CtrlCat.h"
 #include "SendMessageCommand.h"
 #include "LogMessageCommand.h"
-
+#include <vector>
+#include <string>
 using namespace std;
+
+#include "VectorIterator.h"
+#include "VectorIterator.cpp"
+
 void testMediatorCommand() {
     cout << "=== Testing Mediator Pattern ===" << endl << endl;
     
@@ -71,7 +76,28 @@ void testMediatorCommand() {
     delete dogorithmRoom;
     delete ctrlCatRoom;
 }
-int main() {
-    testMediatorCommand();
+
+
+void testIterator()
+{
+    std::vector<std::string*> messages;
+    messages.push_back(new std::string("Message 1"));
+    messages.push_back(new std::string("Message 2"));
+    messages.push_back(new std::string("Message 3"));
+
+    VectorIterator<std::string*> iter(messages);
+
+    for (iter.first(); iter.hasNext(); iter.next())
+        cout << *(iter.current()) << endl;
+
+    for (auto msg : messages) 
+        delete msg;
+    
+}
+
+int main()
+{
+    testIterator();
+  testMediatorCommand();
     return 0;
 }
