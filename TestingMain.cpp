@@ -9,7 +9,6 @@
 using namespace std;
 
 #include "VectorIterator.h"
-#include "VectorIterator.cpp"
 
 void testMediatorCommand() {
     cout << "=== Testing Mediator Pattern ===" << endl << endl;
