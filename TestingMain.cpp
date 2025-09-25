@@ -1,14 +1,17 @@
 #include <iostream>
-#include "User.h"
-#include "Dogorithm.h"
-#include "CtrlCat.h"
-#include "SendMessageCommand.h"
-#include "LogMessageCommand.h"
 #include <vector>
 #include <string>
 using namespace std;
 
 #include "VectorIterator.h"
+#include "User.h"
+#include "Dogorithm.h"
+#include "CtrlCat.h"
+#include "SendMessageCommand.h"
+#include "LogMessageCommand.h"
+#include "Decorator.h"
+#include "Chataholic.h"
+#include "AnimalLover.h"
 
 void testMediatorCommand() {
     cout << "=== Testing Mediator Pattern ===" << endl << endl;
@@ -109,9 +112,68 @@ void testIterator()
     
 }
 
+void testDecorator(){
+    cout << "=== Testing Decorator Pattern with Colors ===" << endl << endl;
+
+    // Create a chat room
+    ChatRoom* room = new Dogorithm();
+    cout << "   - Created chat room: " << room->print() << endl;
+
+    // Create users with different tags
+    AbstractUser* alice = new Alice();
+    AbstractUser* bob = new Bob();
+    AbstractUser* charlie = new Charlie();
+
+    // Decorate users
+    alice = new Chataholic(alice);      // Purple
+    bob = new AnimalLover(bob);         // Blue
+    charlie = new Chataholic(charlie);  // Purple
+    charlie = new AnimalLover(charlie); // Blue (double decorated)
+
+    // Register users to the chat room
+    alice->addChatRoom(room);
+    bob->addChatRoom(room);
+    charlie->addChatRoom(room);
+    cout << "   - Registered users with tags to chat room" << endl << endl;
+
+    // Print users and their tags
+    cout << "   - Users and tags:" << endl;
+    cout << "     " << alice->print() << endl;
+    cout << "     " << bob->print() << endl;
+    cout << "     " << charlie->print() << endl << endl;
+
+    // Simulate chat messages using print() for names
+    cout << alice->print() << " says: Hello everyone!" << endl;
+    cout << bob->print() << " says: Hi Alice!" << endl;
+    cout << charlie->print() << " says: Welcome to the chat!" << endl;
+
+    // Send messages through the chat room (actual logic)
+    alice->send("Hello everyone!", room);
+    bob->send("Hi Alice!", room);
+    charlie->send("Welcome to the chat!", room);
+    cout << "   - Messages sent to chat room" << endl;
+
+    // Execute commands (if any)
+    alice->executeAll();
+    bob->executeAll();
+    charlie->executeAll();
+    cout << "   - Commands executed" << endl;
+
+    // Clean up
+    delete alice;
+    delete bob;
+    delete charlie;
+    delete room;
+
+    cout << endl << "=== Decorator Pattern Color Test Complete ===" << endl;
+}
+
+
 int main()
 {
-    testIterator();
-    testMediatorCommand();
+    // testIterator();
+    // testMediatorCommand();
+    testDecorator();
+
     return 0;
 }
