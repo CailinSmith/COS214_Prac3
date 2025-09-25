@@ -1,14 +1,22 @@
 #include <iostream>
-#include "User.h"
-#include "Dogorithm.h"
-#include "CtrlCat.h"
-#include "SendMessageCommand.h"
-#include "LogMessageCommand.h"
 #include <vector>
 #include <string>
 using namespace std;
 
 #include "VectorIterator.h"
+#include "User.h"
+#include "Dogorithm.h"
+#include "CtrlCat.h"
+#include "SendMessageCommand.h"
+#include "LogMessageCommand.h"
+#include "Decorator.h"
+#include "Chataholic.h"
+#include "AnimalLover.h"
+
+void testMediatorCommand();
+void testIterator();
+void testDecorator();
+void testRemoveDecorator();
 
 void testMediatorCommand() {
     cout << "=== Testing Mediator Pattern ===" << endl << endl;
@@ -109,9 +117,65 @@ void testIterator()
     
 }
 
+void testDecorator(){
+    cout << "=== Testing Decorator Pattern with Colors ===" << endl << endl;
+
+    ChatRoom* room = new Dogorithm();
+    cout << "   - Created " << room->print() << " chat room" << endl;
+
+    AbstractUser* alice = new Alice();
+    AbstractUser* bob = new Bob();
+    AbstractUser* charlie = new Charlie();
+    cout << "   - Created 3 base users" << endl;
+
+    alice = new Chataholic(alice);      
+    bob = new AnimalLover(bob);          
+    charlie = new Chataholic(charlie);  
+    cout << "   - Applied decorators to users" << endl;
+    cout << "     " << alice->print() << endl;
+    cout << "     " << bob->print() << endl;
+    cout << "     " << charlie->print() << endl;
+
+    alice->addChatRoom(room);
+    bob->addChatRoom(room);
+    charlie->addChatRoom(room);
+    cout << "   - Registered decorated users to chat room" << endl << endl;
+
+    cout << "=== Test 1: Messages with decorators ===" << endl;
+    alice->send("Hello everyone!", room);
+    bob->send("Hi Alice!", room);
+    charlie->send("Welcome to the chat!", room);
+    cout << "   - Messages sent" << endl;
+
+    alice->executeAll();
+    bob->executeAll();
+    charlie->executeAll();
+    cout << "   - Commands executed" << endl << endl;
+
+    cout << "=== Test 2: Remove decorator from Alice ===" << endl;
+    cout << "   - Alice before: " << alice->print() << endl;
+    
+    AbstractUser* aliceDecorator = alice;
+    alice = alice->removeDecorator();
+    delete aliceDecorator;  
+    cout << "   - Alice after: " << alice->print() << endl;
+
+    delete alice;
+    delete bob;
+    delete charlie;
+    delete room;
+
+    cout << "=== Decorator Pattern Test Complete ===" << endl;
+}
+
+
+
+
 int main()
 {
     testIterator();
     testMediatorCommand();
+    testDecorator();
+
     return 0;
 }

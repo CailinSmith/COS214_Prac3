@@ -2,17 +2,19 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 
 SRC = \
-	TestingMain.cpp \
-	ChatRoom.cpp \
-	LogMessageCommand.cpp \
-	SendMessageCommand.cpp \
-	BroadcastCommand.cpp \
-	User.cpp 
+    User.cpp \
+    TestingMain.cpp \
+    SendMessageCommand.cpp \
+    LogMessageCommand.cpp \
+    Decorator.cpp \
+    ChatRoom.cpp \
+    Chataholic.cpp \
+    BroadcastCommand.cpp \
+    AnimalLover.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
 TARGET = demo
-
 
 all: $(TARGET)
 
