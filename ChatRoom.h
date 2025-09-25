@@ -29,6 +29,7 @@ public:
 	Iterator<string*>* createMessageIterator();
 
 	bool isEmpty();
+	string print() { return "ChatRoom"; }
 };
 
 

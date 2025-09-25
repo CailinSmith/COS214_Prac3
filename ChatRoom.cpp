@@ -1,5 +1,10 @@
 #include "ChatRoom.h"
 
+void ChatRoom::registerUser(AbstractUser *user)
+{
+	users.push_back(user);
+}
+
 void ChatRoom::sendMessage(string message, AbstractUser *fromUser)
 {
 	for (AbstractUser* user : users) {
@@ -14,6 +19,10 @@ void ChatRoom::saveMessage(string message, AbstractUser *fromUser)
 	chatHistory.push_back(new string(message)); //check if the message already contains users name
 }
 
+void ChatRoom::removeUser(AbstractUser *user)
+{
+	users.erase(remove(users.begin(), users.end(), user), users.end());
+}
 
 Iterator<AbstractUser *> *ChatRoom::createUserIterator()
 {

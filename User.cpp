@@ -27,6 +27,16 @@ void User::executeAll() {
 
 }
 
+void User::addChatRoom(ChatRoom *room)
+{
+	chatRooms.push_back(room);
+	room->registerUser(this);
+}
+
+void User::removeChatRoom(ChatRoom *room)
+{
+	chatRooms.erase(remove(chatRooms.begin(), chatRooms.end(), room), chatRooms.end());
+	room->removeUser(this);
 }
 
 string User::print() {
