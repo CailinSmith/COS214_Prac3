@@ -1,6 +1,22 @@
 #include "ChatRoom.h"
 
-Iterator<AbstractUser*>* ChatRoom::createUserIterator() {
+void ChatRoom::sendMessage(string message, AbstractUser *fromUser)
+{
+	for (AbstractUser* user : users) {
+		if (user != fromUser) { 
+			user->receive(message, fromUser, this);
+		}
+	}
+}
+
+void ChatRoom::saveMessage(string message, AbstractUser *fromUser)
+{
+	chatHistory.push_back(new string(message)); //check if the message already contains users name
+}
+
+
+Iterator<AbstractUser *> *ChatRoom::createUserIterator()
+{
     return new VectorIterator<AbstractUser*>(users);
 }
 

@@ -24,11 +24,11 @@ public:
 
 	virtual void removeUser(AbstractUser* user);
 
-	Iterator<AbstractUser*>* createUserIterator() override;
+	Iterator<AbstractUser*>* createUserIterator();
 
-	Iterator<string*>* createMessageIterator() override;
+	Iterator<string*>* createMessageIterator();
 
-	bool isEmpty() override;
+	bool isEmpty();
 };
 
 

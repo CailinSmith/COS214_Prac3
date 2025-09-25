@@ -1,10 +1,13 @@
 #ifndef LOGMESSAGECOMMAND_H
 #define LOGMESSAGECOMMAND_H
 
-class LogMessageCommand : Command {
+#include "Command.h"
+
+class LogMessageCommand : public Command {
 
 
 public:
+	LogMessageCommand(AbstractUser* fromUser, string message, ChatRoom* room) : Command(fromUser, message, room) {}
 	void execute();
 };
 
