@@ -3,16 +3,11 @@ CXXFLAGS = -std=c++11 -Wall
 
 SRC = \
 	TestingMain.cpp \
-#     AnimalLover.cpp \
-#     Chataholic.cpp \
-#     ChatRoom.cpp \
-#     Command.cpp \
-#     Decorator.cpp \
-#     DemoMain.cpp \
-#     LogMessageCommand.cpp \
-#     SendMessageCommand.cpp \
-#     User.cpp \
-    
+	ChatRoom.cpp \
+	LogMessageCommand.cpp \
+	SendMessageCommand.cpp \
+	BroadcastCommand.cpp \
+	User.cpp 
 
 OBJS = $(SRC:.cpp=.o)
 

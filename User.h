@@ -6,6 +6,7 @@
 #include "Command.h"
 #include "SendMessageCommand.h"
 #include "LogMessageCommand.h"
+#include "BroadcastCommand.h"
 #include <vector>
 #include <string>
 #include <iostream>
@@ -21,6 +22,7 @@ protected:
 public:
 	~User(); 
 	void send(string message, ChatRoom* room);
+	void broadcast(string message);
 
 	void receive(string message, AbstractUser* fromUser, ChatRoom* room);
 
@@ -31,24 +33,26 @@ public:
 	void addChatRoom(ChatRoom* room);
 	void removeChatRoom(ChatRoom* room);
 
+	const vector<ChatRoom*>& getChatRooms() const { return chatRooms; }
+
 	string print();
 };
 
-class Name1 : public User {
+class Alice : public User {
 public:
-	Name1() { name = "Name1"; }
+	Alice() { name = "Alice"; }
 	string print() { return name; }
 };
 
-class Name2 : public User {
+class Bob : public User {
 public:
-	Name2() { name = "Name2"; }
+	Bob() { name = "Bob"; }
 	string print() { return name; }
 };
 
-class Name3 : public User {
+class Charlie : public User {
 public:
-	Name3() { name = "Name3"; }
+	Charlie() { name = "Charlie"; }
 	string print() { return name; }
 };
 

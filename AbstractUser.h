@@ -13,6 +13,7 @@ public:
 	virtual ~AbstractUser() {}; 
 
 	virtual void send(string message, ChatRoom* room) = 0;
+	virtual void broadcast(string message) = 0;
 
 	virtual void receive(string message, AbstractUser* fromUser, ChatRoom* room) = 0;
 
