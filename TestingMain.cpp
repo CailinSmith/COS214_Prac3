@@ -128,7 +128,6 @@ void testDecorator(){
     AbstractUser* charlie = new Charlie();
     cout << "   - Created 3 base users" << endl;
 
-    // Apply decorators
     alice = new Chataholic(alice);      
     bob = new AnimalLover(bob);          
     charlie = new Chataholic(charlie);  
@@ -158,11 +157,9 @@ void testDecorator(){
     
     AbstractUser* aliceDecorator = alice;
     alice = alice->removeDecorator();
-    delete aliceDecorator;  // Clean up the removed decorator
-    
+    delete aliceDecorator;  
     cout << "   - Alice after: " << alice->print() << endl;
 
-    // Clean up
     delete alice;
     delete bob;
     delete charlie;
@@ -176,8 +173,8 @@ void testDecorator(){
 
 int main()
 {
-    // testIterator();
-    // testMediatorCommand();
+    testIterator();
+    testMediatorCommand();
     testDecorator();
 
     return 0;
