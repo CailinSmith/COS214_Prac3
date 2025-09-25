@@ -5,7 +5,7 @@ void User::send(string message, ChatRoom room) {
 	throw "Not yet implemented";
 }
 
-void User::receive(string message, AbstractUser fromUser, ChatRoom room) {
+void User::receive(string message, AbstractUser* fromUser, ChatRoom room) {
 	// TODO - implement User::receive
 	throw "Not yet implemented";
 }

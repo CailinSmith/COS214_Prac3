@@ -1,24 +1,35 @@
 #ifndef CHATROOM_H
 #define CHATROOM_H
 
-class ChatRoom : Collection {
+#include "AbstractUser.h"
+#include "Collection.h"
+#include "Iterator.h"
+#include "VectorIterator.h"
+#include <vector>
+#include <string>
+using namespace std;
+
+class ChatRoom : public Collection {
 
 private:
 	vector<AbstractUser*> users;
 	vector<string*> chatHistory;
 
 public:
-	virtual void registerUser(AbstractUser user) = 0;
+	virtual void registerUser(AbstractUser* user);
 
-	virtual void sendMessage(string message, AbstractUser fromUser) = 0;
+	virtual void sendMessage(string message, AbstractUser* fromUser);
 
-	virtual void saveMessage(string message, AbstractUser fromUser) = 0;
+	virtual void saveMessage(string message, AbstractUser* fromUser);
 
-	virtual void removeUser(AbstractUser user) = 0;
+	virtual void removeUser(AbstractUser* user);
 
-	Iterator<T> createIterator();
+	Iterator<AbstractUser*>* createUserIterator() override;
 
-	boolean isEmpty();
+	Iterator<string*>* createMessageIterator() override;
+
+	bool isEmpty() override;
 };
+
 
 #endif

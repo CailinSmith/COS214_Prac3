@@ -1,11 +1,15 @@
 #include "ChatRoom.h"
 
-Iterator<T> ChatRoom::createIterator() {
-	// TODO - implement ChatRoom::createIterator
-	throw "Not yet implemented";
+Iterator<AbstractUser*>* ChatRoom::createUserIterator() {
+    return new VectorIterator<AbstractUser*>(users);
 }
 
-boolean ChatRoom::isEmpty() {
+Iterator<string*>* ChatRoom::createMessageIterator() {
+    return new VectorIterator<string*>(chatHistory);
+}
+
+bool ChatRoom::isEmpty() {
 	// TODO - implement ChatRoom::isEmpty
+	//could check if both users and chatHistory are empty?
 	throw "Not yet implemented";
 }

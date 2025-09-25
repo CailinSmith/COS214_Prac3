@@ -1,8 +1,14 @@
 #ifndef VECTORITERATOR_H
 #define VECTORITERATOR_H
 
+#include "Iterator.h"
+#include <vector>
+using namespace std;
+
 template <typename T>
-class VectorIterator : Iterator {
+class VectorIterator : public Iterator<T> {
+	
+	friend class ChatRoom;  
 
 protected:
 	int currentPosition;
@@ -20,7 +26,7 @@ public:
 protected:
 	VectorIterator(vector<T> list);
 
-	void ~VectorIterator();
+	~VectorIterator();
 };
 
 #endif
