@@ -1,8 +1,12 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#include "ChatRoom.h"
-#include "AbstractUser.h"
+#include <string>
+using namespace std;
+
+class ChatRoom;
+class AbstractUser;
+
 class Command {
 
 protected:
@@ -16,6 +20,9 @@ public:
 		this->message = message;
 		this->room = room;
 	}
+	
+	virtual ~Command() = default; 
+	
 	virtual void execute() = 0;
 };
 

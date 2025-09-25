@@ -1,9 +1,15 @@
 #include "User.h"
 
+User::~User() {
+	for (Command* command : commandQueue) {
+		delete command;
+	}
+	commandQueue.clear();
+}
 
 void User::send(string message, ChatRoom* room) {
-	string name = print();
-	message = name + ": " + message;
+	// string name = print();
+	// message = name + ": " + message;
 
 	Command* sendCommand = new SendMessageCommand(this, message, room);
 	Command* logCommand = new LogMessageCommand(this, message, room);
@@ -13,7 +19,7 @@ void User::send(string message, ChatRoom* room) {
 
 void User::receive(string message, AbstractUser* fromUser, ChatRoom* room) {
 	string fromName = fromUser->print();
-	cout << "Message in room " << room->print() << " room" << ": " << message << endl;
+	cout << this->print() << " reports: Message from " << fromName << " in room " << room->print() << ": " << message << endl;
 }
 
 void User::addCommand(Command* command) {
@@ -23,8 +29,9 @@ void User::addCommand(Command* command) {
 void User::executeAll() {
 	for (Command* command : commandQueue) {
 		command->execute();
+		delete command;
 	}
-
+	commandQueue.clear(); 
 }
 
 void User::addChatRoom(ChatRoom *room)
@@ -34,12 +41,16 @@ void User::addChatRoom(ChatRoom *room)
 }
 
 void User::removeChatRoom(ChatRoom *room)
-{
-	chatRooms.erase(remove(chatRooms.begin(), chatRooms.end(), room), chatRooms.end());
+{//maybe use iterator here?
+	for (auto it = chatRooms.begin(); it != chatRooms.end(); ++it) {
+		if (*it == room) {
+			chatRooms.erase(it);
+			break;
+		}
+	}
 	room->removeUser(this);
 }
 
 string User::print() {
-	// TODO - implement User::print
-	throw "Not yet implemented";
+	return name; //temporary
 }
