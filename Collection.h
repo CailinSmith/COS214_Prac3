@@ -10,6 +10,7 @@ class AbstractUser;
 class Collection {
 
 public:
+	virtual ~Collection(){};
 	virtual Iterator<AbstractUser*>* createUserIterator() = 0;
 	
 	virtual Iterator<string*>* createMessageIterator() = 0;

@@ -1,13 +1,15 @@
 #ifndef CHATROOM_H
 #define CHATROOM_H
 
-#include "AbstractUser.h"
 #include "Collection.h"
 #include "Iterator.h"
 #include "VectorIterator.h"
 #include <vector>
 #include <string>
+#include <iostream>
 using namespace std;
+
+class AbstractUser;
 
 class ChatRoom : public Collection {
 
@@ -16,6 +18,9 @@ private:
 	vector<string*> chatHistory;
 
 public:
+	virtual ~ChatRoom(); 
+
+
 	virtual void registerUser(AbstractUser* user);
 
 	virtual void sendMessage(string message, AbstractUser* fromUser);
@@ -24,11 +29,12 @@ public:
 
 	virtual void removeUser(AbstractUser* user);
 
-	Iterator<AbstractUser*>* createUserIterator() override;
+	Iterator<AbstractUser*>* createUserIterator();
 
-	Iterator<string*>* createMessageIterator() override;
+	Iterator<string*>* createMessageIterator();
 
-	bool isEmpty() override;
+	bool isEmpty();
+	virtual string print() { return "ChatRoom"; }
 };
 
 

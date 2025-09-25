@@ -2,7 +2,12 @@
 #define DOGORITHM_H
 #include "ChatRoom.h"
 
+#include "ChatRoom.h"
+
 class Dogorithm : public ChatRoom {
+public:
+    string print() { return "Dogorithm"; }
+
 };
 
 #endif
