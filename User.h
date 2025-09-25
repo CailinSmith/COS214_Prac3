@@ -36,24 +36,27 @@ public:
 	const vector<ChatRoom*>& getChatRooms() const { return chatRooms; }
 
 	string print();
+	AbstractUser *removeDecorator() { return this;}
+	
 };
 
 class Alice : public User {
 public:
-	Alice() { name = "Alice"; }
-	string print() { return name; }
+Alice() { name = "Alice"; }
+string print() { return name; }
 };
 
 class Bob : public User {
 public:
-	Bob() { name = "Bob"; }
-	string print() { return name; }
+Bob() { name = "Bob"; }
+string print() { return name; }
 };
 
 class Charlie : public User {
 public:
-	Charlie() { name = "Charlie"; }
-	string print() { return name; }
+Charlie() { name = "Charlie"; }
+string print() { return name; }
 };
+
 
 #endif
