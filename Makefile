@@ -6,6 +6,7 @@ SRC = \
 	ChatRoom.cpp \
 	LogMessageCommand.cpp \
 	SendMessageCommand.cpp \
+	BroadcastCommand.cpp \
 	User.cpp 
 
 OBJS = $(SRC:.cpp=.o)

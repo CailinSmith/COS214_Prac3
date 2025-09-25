@@ -18,9 +18,9 @@ void testMediatorCommand() {
     cout << "   - Created " << dogorithmRoom->print() << " room" << endl;
     cout << "   - Created " << ctrlCatRoom->print() << " room" << endl << endl;
     
-    AbstractUser* alice = new Name1();
-    AbstractUser* bob = new Name2(); 
-    AbstractUser* charlie = new Name3();
+    AbstractUser* alice = new Alice();
+    AbstractUser* bob = new Bob(); 
+    AbstractUser* charlie = new Charlie();
     cout << "   - Created 3 users" << endl << endl;
     
     try {
@@ -45,6 +45,21 @@ void testMediatorCommand() {
         cout << "   Commands executed successfully" << endl;
     } catch (const char* error) {
         cout << "   Command error: " << error << endl;
+    }
+    cout << endl;
+    
+    try {
+        cout << "   Bob broadcasting message to all his rooms (Dogorithm and CtrlCat)..." << endl;
+        bob->broadcast("This is a broadcast message from Bob to all rooms");
+        bob->executeAll();
+        cout << "   Broadcast executed successfully" << endl;
+        
+        cout << "   Charlie broadcasting message to his room (CtrlCat only)..." << endl;
+        charlie->broadcast("Charlie's broadcast message to CtrlCat");
+        charlie->executeAll();
+        cout << "   Charlie's broadcast executed successfully" << endl;
+    } catch (const char* error) {
+        cout << "   Broadcast error: " << error << endl;
     }
     cout << endl;
     
@@ -97,6 +112,6 @@ void testIterator()
 int main()
 {
     testIterator();
-  testMediatorCommand();
+    testMediatorCommand();
     return 0;
 }

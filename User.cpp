@@ -17,6 +17,11 @@ void User::send(string message, ChatRoom* room) {
 	addCommand(logCommand);
 }
 
+void User::broadcast(string message) {
+	Command* broadcastCommand = new BroadcastCommand(this, message);
+	addCommand(broadcastCommand);
+}
+
 void User::receive(string message, AbstractUser* fromUser, ChatRoom* room) {
 	string fromName = fromUser->print();
 	cout << this->print() << " reports: Message from " << fromName << " in room " << room->print() << ": " << message << endl;
