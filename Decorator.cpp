@@ -1,6 +1,8 @@
 #include "Decorator.h"
 #include "ChatRoom.h"
-#include "User.h"  
+#include "User.h"
+#include "SendMessageCommand.h"
+#include "LogMessageCommand.h"  
 
 
 /**
@@ -49,7 +51,10 @@ string Decorator::print() {
  * @param room Target chat room.
  */
 void Decorator::send(string message, ChatRoom* room) {
-    user->send(message, room);
+    Command* sendCommand = new SendMessageCommand(this, message, room);
+    Command* logCommand = new LogMessageCommand(this, message, room);
+    addCommand(sendCommand);
+    addCommand(logCommand);
 }
 
 /**
