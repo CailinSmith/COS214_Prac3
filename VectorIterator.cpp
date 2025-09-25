@@ -1,26 +1,29 @@
 #include "VectorIterator.h"
+
+template <typename T>
+VectorIterator<T>::VectorIterator(vector<T>& list): list(list) {
+	this->currentPosition = 0;
+}
+
 template <typename T>
 void VectorIterator<T>::first() {
-	// TODO - implement VectorIterator::first
-	throw "Not yet implemented";
+	currentPosition = 0;
 }
+
 template <typename T>
 void VectorIterator<T>::next() {
-	// TODO - implement VectorIterator::next
-	throw "Not yet implemented";
+	if (hasNext()) currentPosition++;
 }
+
 template <typename T>
 bool VectorIterator<T>::hasNext() {
-	// TODO - implement VectorIterator::hasNext
-	throw "Not yet implemented";
+	size_t pos = currentPosition;
+	return (pos < list.size());
 }
+
 template <typename T>
 T VectorIterator<T>::current() {
-	// TODO - implement VectorIterator::current
-	throw "Not yet implemented";
+	return list[currentPosition];
+
 }
-template <typename T>
-VectorIterator<T>::VectorIterator(vector<T> list) {
-	// TODO - implement VectorIterator::VectorIterator
-	throw "Not yet implemented";
-}
+
