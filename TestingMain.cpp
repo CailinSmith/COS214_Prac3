@@ -13,85 +13,100 @@ using namespace std;
 #include "Chataholic.h"
 #include "AnimalLover.h"
 
-void testMediatorCommand();
-void testIterator();
-void testDecorator();
-void testRemoveDecorator();
 
-void testMediatorCommand() {
-    cout << "=== Testing Mediator Pattern ===" << endl << endl;
-    
-    ChatRoom* dogorithmRoom = new Dogorithm();
-    ChatRoom* ctrlCatRoom = new CtrlCat();
+void testMediatorCommand()
+{
+    cout << "=== Testing Mediator Pattern ===" << endl
+         << endl;
+
+    ChatRoom *dogorithmRoom = new Dogorithm();
+    ChatRoom *ctrlCatRoom = new CtrlCat();
     cout << "   - Created " << dogorithmRoom->print() << " room" << endl;
-    cout << "   - Created " << ctrlCatRoom->print() << " room" << endl << endl;
-    
-    AbstractUser* alice = new Alice();
-    AbstractUser* bob = new Bob(); 
-    AbstractUser* charlie = new Charlie();
-    cout << "   - Created 3 users" << endl << endl;
-    
-    try {
+    cout << "   - Created " << ctrlCatRoom->print() << " room" << endl
+         << endl;
+
+    AbstractUser *alice = new Alice();
+    AbstractUser *bob = new Bob();
+    AbstractUser *charlie = new Charlie();
+    cout << "   - Created 3 users" << endl
+         << endl;
+
+    try
+    {
         alice->addChatRoom(dogorithmRoom);
         bob->addChatRoom(dogorithmRoom);
         bob->addChatRoom(ctrlCatRoom);
         charlie->addChatRoom(ctrlCatRoom);
         cout << "   Users registered successfully" << endl;
-    } catch (const char* error) {
+    }
+    catch (const char *error)
+    {
         cout << "   Registration error: " << error << endl;
     }
     cout << endl;
-    
-    try {
+
+    try
+    {
         alice->send("Hello from Alice", dogorithmRoom);
         bob->send("Hi Alice, this is Bob", dogorithmRoom);
         cout << "   Messages sent through mediator" << endl;
-        
+
         alice->executeAll();
         bob->send("Hello from Bob in CtrlCat", ctrlCatRoom);
         bob->executeAll();
         cout << "   Commands executed successfully" << endl;
-    } catch (const char* error) {
+    }
+    catch (const char *error)
+    {
         cout << "   Command error: " << error << endl;
     }
     cout << endl;
-    
-    try {
+
+    try
+    {
         cout << "   Bob broadcasting message to all his rooms (Dogorithm and CtrlCat)..." << endl;
         bob->broadcast("This is a broadcast message from Bob to all rooms");
         bob->executeAll();
         cout << "   Broadcast executed successfully" << endl;
-        
+
         cout << "   Charlie broadcasting message to his room (CtrlCat only)..." << endl;
         charlie->broadcast("Charlie's broadcast message to CtrlCat");
         charlie->executeAll();
         cout << "   Charlie's broadcast executed successfully" << endl;
-    } catch (const char* error) {
+    }
+    catch (const char *error)
+    {
         cout << "   Broadcast error: " << error << endl;
     }
     cout << endl;
-    
-    try {
+
+    try
+    {
         bool isEmpty = dogorithmRoom->isEmpty();
         cout << "Dogorithm room is " << (isEmpty ? "empty" : "not empty") << endl;
-        
+
         isEmpty = ctrlCatRoom->isEmpty();
         cout << "CtrlCat room is " << (isEmpty ? "empty" : "not empty") << endl;
-    } catch (const char* error) {
+    }
+    catch (const char *error)
+    {
         cout << "isEmpty error: " << error << endl;
     }
     cout << endl;
-    
-    try {
+
+    try
+    {
         dogorithmRoom->removeUser(alice);
         cout << "   User removed from Dogorithm room" << endl;
-    } catch (const char* error) {
+    }
+    catch (const char *error)
+    {
         cout << "Removal error: " << error << endl;
     }
     cout << endl;
-    
+
     cout << "=== Mediator Pattern Testing Complete ===" << endl;
-    
+
     delete alice;
     delete bob;
     delete charlie;
@@ -99,38 +114,58 @@ void testMediatorCommand() {
     delete ctrlCatRoom;
 }
 
-
 void testIterator()
 {
-    std::vector<std::string*> messages;
+    cout << "=== Testing Iterator Pattern ===" << endl
+         << endl;
+    std::vector<std::string *> messages;
     messages.push_back(new std::string("Message 1"));
     messages.push_back(new std::string("Message 2"));
     messages.push_back(new std::string("Message 3"));
 
-    VectorIterator<std::string*> iter(messages);
+    VectorIterator<std::string *> msgIter(messages);
+    cout << "Iterating over messages:" << endl;
+    for (msgIter.first(); msgIter.hasNext(); msgIter.next())
+        cout << "  " << *(msgIter.current()) << endl;
 
-    for (iter.first(); iter.hasNext(); iter.next())
-        cout << *(iter.current()) << endl;
-
-    for (auto msg : messages) 
+    for (auto msg : messages)
         delete msg;
-    
+
+    std::vector<AbstractUser *> users;
+    users.push_back(new Alice());
+    users.push_back(new Bob());
+    users.push_back(new Charlie());
+
+    VectorIterator<AbstractUser *> userIter(users);
+    cout << "\nIterating over users:" << endl;
+    for (userIter.first(); userIter.hasNext(); userIter.next())
+    {
+        AbstractUser *u = userIter.current();
+        cout << "  User: " << u->print() << endl;
+    }
+
+    for (auto u : users)
+        delete u;
+
+    cout << "=== Iterator Pattern Test Complete ===" << endl;
 }
 
-void testDecorator(){
-    cout << "=== Testing Decorator Pattern with Colors ===" << endl << endl;
+void testDecorator()
+{
+    cout << "=== Testing Decorator Pattern with Colors ===" << endl
+         << endl;
 
-    ChatRoom* room = new Dogorithm();
+    ChatRoom *room = new Dogorithm();
     cout << "   - Created " << room->print() << " chat room" << endl;
 
-    AbstractUser* alice = new Alice();
-    AbstractUser* bob = new Bob();
-    AbstractUser* charlie = new Charlie();
+    AbstractUser *alice = new Alice();
+    AbstractUser *bob = new Bob();
+    AbstractUser *charlie = new Charlie();
     cout << "   - Created 3 base users" << endl;
 
-    alice = new Chataholic(alice);      
-    bob = new AnimalLover(bob);          
-    charlie = new Chataholic(charlie);  
+    alice = new Chataholic(alice);
+    bob = new AnimalLover(bob);
+    charlie = new Chataholic(charlie);
     cout << "   - Applied decorators to users" << endl;
     cout << "     " << alice->print() << endl;
     cout << "     " << bob->print() << endl;
@@ -139,7 +174,8 @@ void testDecorator(){
     alice->addChatRoom(room);
     bob->addChatRoom(room);
     charlie->addChatRoom(room);
-    cout << "   - Registered decorated users to chat room" << endl << endl;
+    cout << "   - Registered decorated users to chat room" << endl
+         << endl;
 
     cout << "=== Test 1: Messages with decorators ===" << endl;
     alice->send("Hello everyone!", room);
@@ -150,14 +186,15 @@ void testDecorator(){
     alice->executeAll();
     bob->executeAll();
     charlie->executeAll();
-    cout << "   - Commands executed" << endl << endl;
+    cout << "   - Commands executed" << endl
+         << endl;
 
     cout << "=== Test 2: Remove decorator from Alice ===" << endl;
     cout << "   - Alice before: " << alice->print() << endl;
-    
-    AbstractUser* aliceDecorator = alice;
+
+    AbstractUser *aliceDecorator = alice;
     alice = alice->removeDecorator();
-    delete aliceDecorator;  
+    delete aliceDecorator;
     cout << "   - Alice after: " << alice->print() << endl;
 
     delete alice;
@@ -167,9 +204,6 @@ void testDecorator(){
 
     cout << "=== Decorator Pattern Test Complete ===" << endl;
 }
-
-
-
 
 int main()
 {
