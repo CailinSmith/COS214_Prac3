@@ -13,7 +13,6 @@ using namespace std;
 #include "Chataholic.h"
 #include "AnimalLover.h"
 
-
 void testMediatorCommand()
 {
     cout << "=== Testing Mediator Pattern ===" << endl
@@ -147,6 +146,12 @@ void testIterator()
     for (auto u : users)
         delete u;
 
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    VectorIterator<int> ints(numbers);
+    cout << "Iterating over numbers:" << endl;
+    for (ints.first(); ints.hasNext(); ints.next())
+        cout << "  " << (ints.current()) << endl;
+
     cout << "=== Iterator Pattern Test Complete ===" << endl;
 }
 
@@ -201,6 +206,16 @@ void testDecorator()
     delete bob;
     delete charlie;
     delete room;
+
+    AbstractUser *user = new Alice();
+    user = new Chataholic(user);
+    user = new AnimalLover(user);
+    cout << user->print() << endl;
+    AbstractUser *removed = user;
+    user = user->removeDecorator(); 
+    delete removed;
+    cout << user->print() << endl;
+    delete user;
 
     cout << "=== Decorator Pattern Test Complete ===" << endl;
 }
