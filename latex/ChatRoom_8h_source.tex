@@ -1,0 +1,47 @@
+\doxysection{Chat\+Room.\+h}
+\hypertarget{ChatRoom_8h_source}{}\label{ChatRoom_8h_source}\mbox{\hyperlink{ChatRoom_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CHATROOM\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CHATROOM\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Collection_8h}{Collection.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Iterator_8h}{Iterator.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VectorIterator_8h}{VectorIterator.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAbstractUser}{AbstractUser}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classChatRoom}{ChatRoom}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCollection}{Collection}}\ \{}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ vector<AbstractUser*>\ users;}
+\DoxyCodeLine{00044\ \ \ \ \ vector<string*>\ chatHistory;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classChatRoom_aace70d1b33b9e4c786e2df266f81591d}{\string~ChatRoom}}();\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChatRoom_af1e6380289d7d204bd5cfd43b257f560}{registerUser}}(\mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ user);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChatRoom_a710dd4abd1572da62a5d73a15739ff51}{sendMessage}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ fromUser);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChatRoom_a6d59b3f078f8595080f3b43e2de48adb}{saveMessage}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ fromUser);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChatRoom_ad5b54f47a8055e85f8aee5f14f0aa03b}{removeUser}}(\mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ user);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classIterator}{Iterator<AbstractUser*>}}*\ \mbox{\hyperlink{classChatRoom_a2a3fc4fd4cc3184e05ee2e377aff3514}{createUserIterator}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classIterator}{Iterator<string*>}}*\ \mbox{\hyperlink{classChatRoom_af99a37484c406e78c0404ebf6fa17180}{createMessageIterator}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classChatRoom_a53bbc2333b6805aeefac7d3b2eb0e8fd}{isEmpty}}();}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classChatRoom_a4d6b5d3e012027323160fb0c7d5e2e29}{print}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ChatRoom"{}};\ \}}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

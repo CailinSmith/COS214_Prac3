@@ -1,0 +1,219 @@
+\doxysection{Chat\+Room Class Reference}
+\hypertarget{classChatRoom}{}\label{classChatRoom}\index{ChatRoom@{ChatRoom}}
+
+
+Abstract mediator class that coordinates communication between users.  
+
+
+
+
+{\ttfamily \#include $<$Chat\+Room.\+h$>$}
+
+
+
+Inheritance diagram for Chat\+Room\+:
+% FIG 0
+
+
+Collaboration diagram for Chat\+Room\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classChatRoom_aace70d1b33b9e4c786e2df266f81591d}\label{classChatRoom_aace70d1b33b9e4c786e2df266f81591d} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chat\+Room} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor that cleans up chat history. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_af1e6380289d7d204bd5cfd43b257f560}{register\+User}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Register a user with the chat room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_a710dd4abd1572da62a5d73a15739ff51}{send\+Message}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User)
+\begin{DoxyCompactList}\small\item\em Send a message from one user to all other users in the room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_a6d59b3f078f8595080f3b43e2de48adb}{save\+Message}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User)
+\begin{DoxyCompactList}\small\item\em Save a message to the chat room\textquotesingle{}s persistent history. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_ad5b54f47a8055e85f8aee5f14f0aa03b}{remove\+User}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Remove a user from the chat room. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}}$<$ \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classChatRoom_a2a3fc4fd4cc3184e05ee2e377aff3514}{create\+User\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Create an iterator for traversing users in the chat room. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}}$<$ string \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classChatRoom_af99a37484c406e78c0404ebf6fa17180}{create\+Message\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Create an iterator for traversing chat message history. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classChatRoom_a53bbc2333b6805aeefac7d3b2eb0e8fd}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Check if the chat room is empty (no users) \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classChatRoom_a4d6b5d3e012027323160fb0c7d5e2e29}{print}} ()
+\begin{DoxyCompactList}\small\item\em Get string representation of the chat room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCollection}{Collection}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract mediator class that coordinates communication between users. 
+
+This class serves as the Mediator in the Mediator pattern, managing all interactions between users in a chat room. It inherits from \doxylink{classCollection}{Collection} to provide iterator functionality for users and chat history.
+
+Attributes\+:
+\begin{DoxyItemize}
+\item users\+: Vector of users currently in the chat room
+\item chat\+History\+: Vector of message strings representing conversation history
+\end{DoxyItemize}
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Manages user registration and removal from chat room
+\item Coordinates message sending between users
+\item Maintains persistent chat history
+\item Provides iterator access to users and messages
+\item Serves as central communication hub (Mediator pattern) 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classChatRoom_af99a37484c406e78c0404ebf6fa17180}\label{classChatRoom_af99a37484c406e78c0404ebf6fa17180} 
+\index{ChatRoom@{ChatRoom}!createMessageIterator@{createMessageIterator}}
+\index{createMessageIterator@{createMessageIterator}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{createMessageIterator()}{createMessageIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIterator}{Iterator}}$<$ string \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} Chat\+Room\+::create\+Message\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create an iterator for traversing chat message history. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to iterator for string\texorpdfstring{$\ast$}{*} elements 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCollection_a341fffabb5c20dc305c08c9368d86fd2}{Collection}}.
+
+\Hypertarget{classChatRoom_a2a3fc4fd4cc3184e05ee2e377aff3514}\label{classChatRoom_a2a3fc4fd4cc3184e05ee2e377aff3514} 
+\index{ChatRoom@{ChatRoom}!createUserIterator@{createUserIterator}}
+\index{createUserIterator@{createUserIterator}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{createUserIterator()}{createUserIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIterator}{Iterator}}$<$ \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} Chat\+Room\+::create\+User\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create an iterator for traversing users in the chat room. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to iterator for Abstract\+User\texorpdfstring{$\ast$}{*} elements 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCollection_a3bab57ff163417e6ac6313319dc2f391}{Collection}}.
+
+\Hypertarget{classChatRoom_a53bbc2333b6805aeefac7d3b2eb0e8fd}\label{classChatRoom_a53bbc2333b6805aeefac7d3b2eb0e8fd} 
+\index{ChatRoom@{ChatRoom}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Chat\+Room\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the chat room is empty (no users) 
+
+\begin{DoxyReturn}{Returns}
+True if no users are in the room, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCollection_a774f22e3bdac705a397b447b4ac77b2e}{Collection}}.
+
+\Hypertarget{classChatRoom_a4d6b5d3e012027323160fb0c7d5e2e29}\label{classChatRoom_a4d6b5d3e012027323160fb0c7d5e2e29} 
+\index{ChatRoom@{ChatRoom}!print@{print}}
+\index{print@{print}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual string Chat\+Room\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get string representation of the chat room. 
+
+\begin{DoxyReturn}{Returns}
+String "{}\+Chat\+Room"{} (overridden in subclasses for specific room types) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classCtrlCat_a602273d0b7c02adbf84912361e22b161}{Ctrl\+Cat}}, and \mbox{\hyperlink{classDogorithm_a884efdb64b3e91bc73987d96e60d0371}{Dogorithm}}.
+
+\Hypertarget{classChatRoom_af1e6380289d7d204bd5cfd43b257f560}\label{classChatRoom_af1e6380289d7d204bd5cfd43b257f560} 
+\index{ChatRoom@{ChatRoom}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily void Chat\+Room\+::register\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Register a user with the chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Pointer to the user to register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be overridden in subclasses 
+\end{DoxyNote}
+\Hypertarget{classChatRoom_ad5b54f47a8055e85f8aee5f14f0aa03b}\label{classChatRoom_ad5b54f47a8055e85f8aee5f14f0aa03b} 
+\index{ChatRoom@{ChatRoom}!removeUser@{removeUser}}
+\index{removeUser@{removeUser}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{removeUser()}{removeUser()}}
+{\footnotesize\ttfamily void Chat\+Room\+::remove\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove a user from the chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Pointer to the user to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be overridden in subclasses 
+\end{DoxyNote}
+\Hypertarget{classChatRoom_a6d59b3f078f8595080f3b43e2de48adb}\label{classChatRoom_a6d59b3f078f8595080f3b43e2de48adb} 
+\index{ChatRoom@{ChatRoom}!saveMessage@{saveMessage}}
+\index{saveMessage@{saveMessage}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{saveMessage()}{saveMessage()}}
+{\footnotesize\ttfamily void Chat\+Room\+::save\+Message (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save a message to the chat room\textquotesingle{}s persistent history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content to save \\
+\hline
+{\em from\+User} & Pointer to the user who sent the message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be overridden in subclasses 
+\end{DoxyNote}
+\Hypertarget{classChatRoom_a710dd4abd1572da62a5d73a15739ff51}\label{classChatRoom_a710dd4abd1572da62a5d73a15739ff51} 
+\index{ChatRoom@{ChatRoom}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!ChatRoom@{ChatRoom}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily void Chat\+Room\+::send\+Message (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Send a message from one user to all other users in the room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content to send \\
+\hline
+{\em from\+User} & Pointer to the user sending the message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be overridden in subclasses 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ChatRoom_8h}{Chat\+Room.\+h}}\item 
+Chat\+Room.\+cpp\end{DoxyCompactItemize}

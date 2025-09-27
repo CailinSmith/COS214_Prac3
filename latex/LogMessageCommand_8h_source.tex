@@ -1,0 +1,24 @@
+\doxysection{Log\+Message\+Command.\+h}
+\hypertarget{LogMessageCommand_8h_source}{}\label{LogMessageCommand_8h_source}\mbox{\hyperlink{LogMessageCommand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ LOGMESSAGECOMMAND\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ LOGMESSAGECOMMAND\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AbstractUser_8h}{AbstractUser.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ChatRoom_8h}{ChatRoom.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLogMessageCommand}{LogMessageCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCommand}{Command}}\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classLogMessageCommand_a476bf7a433a0f15d728b04d8e479d914}{LogMessageCommand}}(\mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ fromUser,\ \textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room)\ :\ \mbox{\hyperlink{classCommand}{Command}}(fromUser,\ message,\ room)\ \{\}}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogMessageCommand_a3be555c3679074b6644bc058fbc6c683}{execute}}();}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

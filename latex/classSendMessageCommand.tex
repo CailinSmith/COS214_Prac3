@@ -1,0 +1,101 @@
+\doxysection{Send\+Message\+Command Class Reference}
+\hypertarget{classSendMessageCommand}{}\label{classSendMessageCommand}\index{SendMessageCommand@{SendMessageCommand}}
+
+
+Concrete command that sends messages to other users via the chat room mediator.  
+
+
+
+
+{\ttfamily \#include $<$Send\+Message\+Command.\+h$>$}
+
+
+
+Inheritance diagram for Send\+Message\+Command\+:
+% FIG 0
+
+
+Collaboration diagram for Send\+Message\+Command\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSendMessageCommand_aab631b68f887f604089414158501101e}{Send\+Message\+Command}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classSendMessageCommand}{Send\+Message\+Command}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSendMessageCommand_a1393dfb26e5e5c580c87fb1f0aa38276}{execute}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of execute that sends message via chat room mediator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_aea1fd655d78ae1f2ae3ea881fbe2c805}{Command}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes command with required parameters. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries room}
+\item 
+string {\bfseries message}
+\item 
+\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} {\bfseries from\+User}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete command that sends messages to other users via the chat room mediator. 
+
+This class implements the \doxylink{classCommand}{Command} pattern for message sending functionality. When executed, it uses the \doxylink{classChatRoom}{Chat\+Room} mediator to deliver the message to all other users in the specified chat room.
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Stores message and sender information for transmission
+\item Executes message sending by calling \doxylink{classChatRoom}{Chat\+Room}\textquotesingle{}s send\+Message method
+\item Enables deferred message delivery through command queuing
+\item Maintains mediator pattern by routing messages through \doxylink{classChatRoom}{Chat\+Room} 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSendMessageCommand_aab631b68f887f604089414158501101e}\label{classSendMessageCommand_aab631b68f887f604089414158501101e} 
+\index{SendMessageCommand@{SendMessageCommand}!SendMessageCommand@{SendMessageCommand}}
+\index{SendMessageCommand@{SendMessageCommand}!SendMessageCommand@{SendMessageCommand}}
+\doxysubsubsection{\texorpdfstring{SendMessageCommand()}{SendMessageCommand()}}
+{\footnotesize\ttfamily Send\+Message\+Command\+::\+Send\+Message\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User,  }\item[{string}]{message,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{classSendMessageCommand}{Send\+Message\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+User} & Pointer to the user sending the message \\
+\hline
+{\em message} & The message content to be sent \\
+\hline
+{\em room} & Pointer to the chat room where the message should be sent \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSendMessageCommand_a1393dfb26e5e5c580c87fb1f0aa38276}\label{classSendMessageCommand_a1393dfb26e5e5c580c87fb1f0aa38276} 
+\index{SendMessageCommand@{SendMessageCommand}!execute@{execute}}
+\index{execute@{execute}!SendMessageCommand@{SendMessageCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Send\+Message\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of execute that sends message via chat room mediator. 
+
+Calls the \doxylink{classChatRoom}{Chat\+Room}\textquotesingle{}s send\+Message method to deliver the message to all other users in the room, following the mediator pattern. 
+
+Implements \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SendMessageCommand_8h}{Send\+Message\+Command.\+h}}\item 
+Send\+Message\+Command.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,273 @@
+\doxysection{User Class Reference}
+\hypertarget{classUser}{}\label{classUser}\index{User@{User}}
+
+
+Concrete implementation of \doxylink{classAbstractUser}{Abstract\+User} that manages chat room memberships and command execution.  
+
+
+
+
+{\ttfamily \#include $<$User.\+h$>$}
+
+
+
+Inheritance diagram for User\+:
+% FIG 0
+
+
+Collaboration diagram for User\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}\label{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+User} ()
+\begin{DoxyCompactList}\small\item\em Destructor that cleans up remaining commands in queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_abced2de4c95d498cfa10505b129e8c70}{send}} (string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of send using \doxylink{classSendMessageCommand}{Send\+Message\+Command} and \doxylink{classLogMessageCommand}{Log\+Message\+Command}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a44236724bf752d8f092a7c65ab460030}{broadcast}} (string message)
+\begin{DoxyCompactList}\small\item\em Implementation of broadcast using \doxylink{classBroadcastCommand}{Broadcast\+Command} to send to all user\textquotesingle{}s rooms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a316ac7b63f7393c9eb4a93c0e99adb43}{receive}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of receive that displays incoming messages to console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a40b0f3772906a022151037db5aaea30f}{add\+Command}} (\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}command)
+\begin{DoxyCompactList}\small\item\em Implementation of add\+Command that adds command to the execution queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a44388bdb8fb6accbe7fe143541c3d98d}{execute\+All}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of execute\+All that runs all queued commands and clears queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a50aae2d175df146264b4d7362da710ef}{add\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of add\+Chat\+Room that joins user to room and registers with mediator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a407522c7fd471baa7c4b99b2659def17}{remove\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of remove\+Chat\+Room that removes user from room. \end{DoxyCompactList}\item 
+const vector$<$ \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classUser_a05936dde50012d36d81c570f5e411f58}{get\+Chat\+Rooms}} () const
+\begin{DoxyCompactList}\small\item\em Get read-\/only access to the user\textquotesingle{}s chat room memberships. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classUser_ad7725794319d8587c2a69303a78a2e2b}{print}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of print that returns the user\textquotesingle{}s display name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUser_ad418e34fb688e04e416b4abcb1fb2ddb}{remove\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Remove decorator and return base user (for decorator pattern compatibility) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAbstractUser}{Abstract\+User}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+User} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUser_aa11433f81b43c0977a568d1bde8a8ae1}\label{classUser_aa11433f81b43c0977a568d1bde8a8ae1} 
+vector$<$ \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries chat\+Rooms}
+\item 
+\Hypertarget{classUser_a643f85779a4693855c171c396f49e515}\label{classUser_a643f85779a4693855c171c396f49e515} 
+string {\bfseries name}
+\item 
+\Hypertarget{classUser_a02d8d630e528f5f98715031a5cde3aeb}\label{classUser_a02d8d630e528f5f98715031a5cde3aeb} 
+vector$<$ \mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries command\+Queue}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of \doxylink{classAbstractUser}{Abstract\+User} that manages chat room memberships and command execution. 
+
+This class serves as the Concrete Colleague in the Mediator pattern. It implements all abstract methods from \doxylink{classAbstractUser}{Abstract\+User} and uses the \doxylink{classCommand}{Command} pattern for deferred execution of messaging operations.
+
+Attributes\+:
+\begin{DoxyItemize}
+\item chat\+Rooms\+: Vector of chat rooms the user is a member of
+\item name\+: String identifier for the user
+\item command\+Queue\+: Vector of commands awaiting execution
+\end{DoxyItemize}
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Manages membership in multiple chat rooms
+\item Implements message sending using \doxylink{classSendMessageCommand}{Send\+Message\+Command} and \doxylink{classLogMessageCommand}{Log\+Message\+Command}
+\item Implements broadcasting using \doxylink{classBroadcastCommand}{Broadcast\+Command}
+\item Maintains and executes a queue of commands
+\item Provides access to chat room memberships 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUser_a50aae2d175df146264b4d7362da710ef}\label{classUser_a50aae2d175df146264b4d7362da710ef} 
+\index{User@{User}!addChatRoom@{addChatRoom}}
+\index{addChatRoom@{addChatRoom}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addChatRoom()}{addChatRoom()}}
+{\footnotesize\ttfamily void User\+::add\+Chat\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of add\+Chat\+Room that joins user to room and registers with mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Pointer to the chat room to join \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_ab3793bf7ab75d6bb8f60225e5e053d56}{Abstract\+User}}.
+
+\Hypertarget{classUser_a40b0f3772906a022151037db5aaea30f}\label{classUser_a40b0f3772906a022151037db5aaea30f} 
+\index{User@{User}!addCommand@{addCommand}}
+\index{addCommand@{addCommand}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addCommand()}{addCommand()}}
+{\footnotesize\ttfamily void User\+::add\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of add\+Command that adds command to the execution queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to the command to be queued \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_adb0f1330f275c23584df898009689fe6}{Abstract\+User}}.
+
+\Hypertarget{classUser_a44236724bf752d8f092a7c65ab460030}\label{classUser_a44236724bf752d8f092a7c65ab460030} 
+\index{User@{User}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!User@{User}}
+\doxysubsubsection{\texorpdfstring{broadcast()}{broadcast()}}
+{\footnotesize\ttfamily void User\+::broadcast (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of broadcast using \doxylink{classBroadcastCommand}{Broadcast\+Command} to send to all user\textquotesingle{}s rooms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content to broadcast \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_aa2556508b0253455cb831e0f962e1871}{Abstract\+User}}.
+
+\Hypertarget{classUser_a44388bdb8fb6accbe7fe143541c3d98d}\label{classUser_a44388bdb8fb6accbe7fe143541c3d98d} 
+\index{User@{User}!executeAll@{executeAll}}
+\index{executeAll@{executeAll}!User@{User}}
+\doxysubsubsection{\texorpdfstring{executeAll()}{executeAll()}}
+{\footnotesize\ttfamily void User\+::execute\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of execute\+All that runs all queued commands and clears queue. 
+
+
+
+Implements \mbox{\hyperlink{classAbstractUser_ad693a2255a44a2f91df5e1964180d6f5}{Abstract\+User}}.
+
+\Hypertarget{classUser_a05936dde50012d36d81c570f5e411f58}\label{classUser_a05936dde50012d36d81c570f5e411f58} 
+\index{User@{User}!getChatRooms@{getChatRooms}}
+\index{getChatRooms@{getChatRooms}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getChatRooms()}{getChatRooms()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} $>$ \& User\+::get\+Chat\+Rooms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get read-\/only access to the user\textquotesingle{}s chat room memberships. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to vector of chat room pointers 
+\end{DoxyReturn}
+\Hypertarget{classUser_ad7725794319d8587c2a69303a78a2e2b}\label{classUser_ad7725794319d8587c2a69303a78a2e2b} 
+\index{User@{User}!print@{print}}
+\index{print@{print}!User@{User}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily string User\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of print that returns the user\textquotesingle{}s display name. 
+
+\begin{DoxyReturn}{Returns}
+String representation of the user\textquotesingle{}s name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_a3d2e0c6634545bcd3d3c0f1c9c158158}{Abstract\+User}}.
+
+\Hypertarget{classUser_a316ac7b63f7393c9eb4a93c0e99adb43}\label{classUser_a316ac7b63f7393c9eb4a93c0e99adb43} 
+\index{User@{User}!receive@{receive}}
+\index{receive@{receive}!User@{User}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily void User\+::receive (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of receive that displays incoming messages to console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content received \\
+\hline
+{\em from\+User} & Pointer to the user who sent the message \\
+\hline
+{\em room} & Pointer to the chat room where the message was sent \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_a7483f0c8a1f24ae2710f42dfb0ead60d}{Abstract\+User}}.
+
+\Hypertarget{classUser_a407522c7fd471baa7c4b99b2659def17}\label{classUser_a407522c7fd471baa7c4b99b2659def17} 
+\index{User@{User}!removeChatRoom@{removeChatRoom}}
+\index{removeChatRoom@{removeChatRoom}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removeChatRoom()}{removeChatRoom()}}
+{\footnotesize\ttfamily void User\+::remove\+Chat\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of remove\+Chat\+Room that removes user from room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Pointer to the chat room to leave \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_a4b2298639b4bbdf5f96961a2307d6075}{Abstract\+User}}.
+
+\Hypertarget{classUser_ad418e34fb688e04e416b4abcb1fb2ddb}\label{classUser_ad418e34fb688e04e416b4abcb1fb2ddb} 
+\index{User@{User}!removeDecorator@{removeDecorator}}
+\index{removeDecorator@{removeDecorator}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removeDecorator()}{removeDecorator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} User\+::remove\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Remove decorator and return base user (for decorator pattern compatibility) 
+
+\begin{DoxyReturn}{Returns}
+Pointer to this user instance 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_a83c85edd1b49ee6fe97ff42950d909eb}{Abstract\+User}}.
+
+\Hypertarget{classUser_abced2de4c95d498cfa10505b129e8c70}\label{classUser_abced2de4c95d498cfa10505b129e8c70} 
+\index{User@{User}!send@{send}}
+\index{send@{send}!User@{User}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily void User\+::send (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of send using \doxylink{classSendMessageCommand}{Send\+Message\+Command} and \doxylink{classLogMessageCommand}{Log\+Message\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content to send \\
+\hline
+{\em room} & Pointer to the chat room where the message should be sent \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_a0c0efb11e62cfa87448ac1360519bc60}{Abstract\+User}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{User_8h}{User.\+h}}\item 
+User.\+cpp\end{DoxyCompactItemize}

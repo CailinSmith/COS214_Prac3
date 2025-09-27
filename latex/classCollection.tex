@@ -1,0 +1,110 @@
+\doxysection{Collection Class Reference}
+\hypertarget{classCollection}{}\label{classCollection}\index{Collection@{Collection}}
+
+
+Abstract base class providing iterator interface for collections of users and messages.  
+
+
+
+
+{\ttfamily \#include $<$Collection.\+h$>$}
+
+
+
+Inheritance diagram for Collection\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCollection_ab3938d189a8186230a7999cfa465d37f}\label{classCollection_ab3938d189a8186230a7999cfa465d37f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic cleanup. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classIterator}{Iterator}}$<$ \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCollection_a3bab57ff163417e6ac6313319dc2f391}{create\+User\+Iterator}} ()=0
+\begin{DoxyCompactList}\small\item\em Create an iterator for traversing user collections. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classIterator}{Iterator}}$<$ string \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCollection_a341fffabb5c20dc305c08c9368d86fd2}{create\+Message\+Iterator}} ()=0
+\begin{DoxyCompactList}\small\item\em Create an iterator for traversing message collections. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCollection_a774f22e3bdac705a397b447b4ac77b2e}{is\+Empty}} ()=0
+\begin{DoxyCompactList}\small\item\em Check if the collection is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class providing iterator interface for collections of users and messages. 
+
+This class defines the interface for collections that need to provide iterator access to their internal data structures. It supports iteration over both user collections and message collections using the \doxylink{classIterator}{Iterator} pattern.
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Defines interface for creating user iterators
+\item Defines interface for creating message iterators ~\newline
+
+\item Defines interface for checking collection emptiness
+\item Serves as base class for concrete collections (like \doxylink{classChatRoom}{Chat\+Room}) 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCollection_a341fffabb5c20dc305c08c9368d86fd2}\label{classCollection_a341fffabb5c20dc305c08c9368d86fd2} 
+\index{Collection@{Collection}!createMessageIterator@{createMessageIterator}}
+\index{createMessageIterator@{createMessageIterator}!Collection@{Collection}}
+\doxysubsubsection{\texorpdfstring{createMessageIterator()}{createMessageIterator()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classIterator}{Iterator}}$<$ string \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} Collection\+::create\+Message\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create an iterator for traversing message collections. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to iterator for string\texorpdfstring{$\ast$}{*} elements ~\newline
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be implemented in subclasses 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classChatRoom_af99a37484c406e78c0404ebf6fa17180}{Chat\+Room}}.
+
+\Hypertarget{classCollection_a3bab57ff163417e6ac6313319dc2f391}\label{classCollection_a3bab57ff163417e6ac6313319dc2f391} 
+\index{Collection@{Collection}!createUserIterator@{createUserIterator}}
+\index{createUserIterator@{createUserIterator}!Collection@{Collection}}
+\doxysubsubsection{\texorpdfstring{createUserIterator()}{createUserIterator()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classIterator}{Iterator}}$<$ \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} Collection\+::create\+User\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create an iterator for traversing user collections. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to iterator for Abstract\+User\texorpdfstring{$\ast$}{*} elements 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be implemented in subclasses 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classChatRoom_a2a3fc4fd4cc3184e05ee2e377aff3514}{Chat\+Room}}.
+
+\Hypertarget{classCollection_a774f22e3bdac705a397b447b4ac77b2e}\label{classCollection_a774f22e3bdac705a397b447b4ac77b2e} 
+\index{Collection@{Collection}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Collection@{Collection}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily virtual bool Collection\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the collection is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if collection contains no elements, false otherwise 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be implemented in subclasses 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classChatRoom_a53bbc2333b6805aeefac7d3b2eb0e8fd}{Chat\+Room}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Collection_8h}{Collection.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\doxysection{Bob Class Reference}
+\hypertarget{classBob}{}\label{classBob}\index{Bob@{Bob}}
+
+
+Concrete user implementation representing \doxylink{classBob}{Bob}.  
+
+
+
+
+{\ttfamily \#include $<$User.\+h$>$}
+
+
+
+Inheritance diagram for Bob\+:
+% FIG 0
+
+
+Collaboration diagram for Bob\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBob_ae040cbfd1a95992a61556311f699df94}\label{classBob_ae040cbfd1a95992a61556311f699df94} 
+{\bfseries Bob} ()
+\begin{DoxyCompactList}\small\item\em Constructor that sets the user name to "{}\+Bob"{}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBob_aab4e0868ea645fff4b5356be24606037}{print}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of print that returns "{}\+Bob"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUser}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+User} ()
+\begin{DoxyCompactList}\small\item\em Destructor that cleans up remaining commands in queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_abced2de4c95d498cfa10505b129e8c70}{send}} (string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of send using \doxylink{classSendMessageCommand}{Send\+Message\+Command} and \doxylink{classLogMessageCommand}{Log\+Message\+Command}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a44236724bf752d8f092a7c65ab460030}{broadcast}} (string message)
+\begin{DoxyCompactList}\small\item\em Implementation of broadcast using \doxylink{classBroadcastCommand}{Broadcast\+Command} to send to all user\textquotesingle{}s rooms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a316ac7b63f7393c9eb4a93c0e99adb43}{receive}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of receive that displays incoming messages to console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a40b0f3772906a022151037db5aaea30f}{add\+Command}} (\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}command)
+\begin{DoxyCompactList}\small\item\em Implementation of add\+Command that adds command to the execution queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a44388bdb8fb6accbe7fe143541c3d98d}{execute\+All}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of execute\+All that runs all queued commands and clears queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a50aae2d175df146264b4d7362da710ef}{add\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of add\+Chat\+Room that joins user to room and registers with mediator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a407522c7fd471baa7c4b99b2659def17}{remove\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Implementation of remove\+Chat\+Room that removes user from room. \end{DoxyCompactList}\item 
+const vector$<$ \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classUser_a05936dde50012d36d81c570f5e411f58}{get\+Chat\+Rooms}} () const
+\begin{DoxyCompactList}\small\item\em Get read-\/only access to the user\textquotesingle{}s chat room memberships. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classUser_ad7725794319d8587c2a69303a78a2e2b}{print}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of print that returns the user\textquotesingle{}s display name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUser_ad418e34fb688e04e416b4abcb1fb2ddb}{remove\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Remove decorator and return base user (for decorator pattern compatibility) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAbstractUser}{Abstract\+User}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+User} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUser}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries chat\+Rooms}
+\item 
+string {\bfseries name}
+\item 
+vector$<$ \mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries command\+Queue}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete user implementation representing \doxylink{classBob}{Bob}. 
+
+Simple concrete implementation of \doxylink{classUser}{User} with "{}\+Bob"{} as the display name. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBob_aab4e0868ea645fff4b5356be24606037}\label{classBob_aab4e0868ea645fff4b5356be24606037} 
+\index{Bob@{Bob}!print@{print}}
+\index{print@{print}!Bob@{Bob}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily string Bob\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of print that returns "{}\+Bob"{}. 
+
+\begin{DoxyReturn}{Returns}
+String "{}\+Bob"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractUser_a3d2e0c6634545bcd3d3c0f1c9c158158}{Abstract\+User}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{User_8h}{User.\+h}}\end{DoxyCompactItemize}

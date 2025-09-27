@@ -1,0 +1,65 @@
+\doxysection{Vector\+Iterator.\+h}
+\hypertarget{VectorIterator_8h_source}{}\label{VectorIterator_8h_source}\mbox{\hyperlink{VectorIterator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ VECTORITERATOR\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ VECTORITERATOR\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Iterator_8h}{Iterator.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVectorIterator}{VectorIterator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIterator}{Iterator}}<T>}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classChatRoom}{ChatRoom}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ currentPosition;\ }
+\DoxyCodeLine{00035\ \ \ \ \ vector<T>\ \&list;\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classVectorIterator}{VectorIterator}}(vector<T>\ \&list);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classVectorIterator_a3f36426537a0e02c9bc48f69d2e9bba9}{\string~VectorIterator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVectorIterator_a8a354fdfeadeaefe1f50ebb828024a26}{first}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVectorIterator_a351dd88a0bb58a879c875dd0a1936bde}{next}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVectorIterator_a802ed8232b31e643a68cd4417d0e96d7}{hasNext}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ T\ \mbox{\hyperlink{classVectorIterator_a48511088a6e2cdfda4834a26561fda51}{current}}();}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{classVectorIterator_aefc344d7d818887c8cd322bdb3d21513}{VectorIterator<T>::VectorIterator}}(vector<T>\&\ list):\ list(list)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ this-\/>currentPosition\ =\ 0;}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVectorIterator_a8a354fdfeadeaefe1f50ebb828024a26}{VectorIterator<T>::first}}()\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ currentPosition\ =\ 0;}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVectorIterator_a351dd88a0bb58a879c875dd0a1936bde}{VectorIterator<T>::next}}()\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (hasNext())\ currentPosition++;}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVectorIterator_a802ed8232b31e643a68cd4417d0e96d7}{VectorIterator<T>::hasNext}}()\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ currentPosition;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ (pos\ <\ list.size());}
+\DoxyCodeLine{00092\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00095\ T\ \mbox{\hyperlink{classVectorIterator_a48511088a6e2cdfda4834a26561fda51}{VectorIterator<T>::current}}()\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ list[currentPosition];}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

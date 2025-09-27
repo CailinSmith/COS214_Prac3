@@ -1,0 +1,167 @@
+\doxysection{Chataholic Class Reference}
+\hypertarget{classChataholic}{}\label{classChataholic}\index{Chataholic@{Chataholic}}
+
+
+\doxylink{classDecorator}{Decorator} that adds a purple "{}\+Chataholic"{} tag to the user\textquotesingle{}s name and customizes message output.  
+
+
+
+
+{\ttfamily \#include $<$Chataholic.\+h$>$}
+
+
+
+Inheritance diagram for Chataholic\+:
+% FIG 0
+
+
+Collaboration diagram for Chataholic\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChataholic_a3b05ced07955c2120300c8b55b7d297f}{Chataholic}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classChataholic}{Chataholic} decorator for the given user. \end{DoxyCompactList}\item 
+\Hypertarget{classChataholic_ab901039cdc3381798875957b7ce69004}\label{classChataholic_ab901039cdc3381798875957b7ce69004} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chataholic} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classChataholic_a8267081a3e15824edae5deae80bd37ff}{print}} ()
+\begin{DoxyCompactList}\small\item\em Returns the user\textquotesingle{}s name with the \doxylink{classChataholic}{Chataholic} tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChataholic_ab346e33429bbeb2ec5ff07f47dce1196}{send}} (string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Delegates sending a message to the wrapped user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChataholic_a72018911098c838321a9f3674c69db3f}{broadcast}} (string message) override
+\begin{DoxyCompactList}\small\item\em Delegates broadcasting a message to the wrapped user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChataholic_a9c2d0e540d197054b9c6402856fbd3ca}{receive}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Customizes message reception output for \doxylink{classChataholic}{Chataholic} users. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classDecorator}{Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDecorator_a5429dc2644e8afa59f679b226e051e5b}{Decorator}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classDecorator}{Decorator} wrapping the given \doxylink{classAbstractUser}{Abstract\+User}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDecorator_af3889e104e7eed457a41a8deb36a7218}{remove\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Removes the decorator, returning the wrapped user. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Decorator} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Deletes wrapped user if owned. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_a77c81755b8d5ba15857c8f88d82c760f}{add\+Command}} (\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}command) override
+\begin{DoxyCompactList}\small\item\em Delegates adding a command to the wrapped user. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_aab3158c80e18e549d44892dd7fa0d69d}{execute\+All}} () override
+\begin{DoxyCompactList}\small\item\em Delegates executing all commands to the wrapped user. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_a4e79ad145e990dcbedc3af2ccc0d2a63}{add\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Registers the decorator in the given chat room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_a9c499a5ed2aacee73db20eb5d3fe2ade}{remove\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Delegates chat room removal to the wrapped user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAbstractUser}{Abstract\+User}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+User} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classDecorator}{Decorator} that adds a purple "{}\+Chataholic"{} tag to the user\textquotesingle{}s name and customizes message output. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classChataholic_a3b05ced07955c2120300c8b55b7d297f}\label{classChataholic_a3b05ced07955c2120300c8b55b7d297f} 
+\index{Chataholic@{Chataholic}!Chataholic@{Chataholic}}
+\index{Chataholic@{Chataholic}!Chataholic@{Chataholic}}
+\doxysubsubsection{\texorpdfstring{Chataholic()}{Chataholic()}}
+{\footnotesize\ttfamily Chataholic\+::\+Chataholic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{user }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classChataholic}{Chataholic} decorator for the given user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Pointer to the \doxylink{classAbstractUser}{Abstract\+User} to decorate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classChataholic_a72018911098c838321a9f3674c69db3f}\label{classChataholic_a72018911098c838321a9f3674c69db3f} 
+\index{Chataholic@{Chataholic}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!Chataholic@{Chataholic}}
+\doxysubsubsection{\texorpdfstring{broadcast()}{broadcast()}}
+{\footnotesize\ttfamily void Chataholic\+::broadcast (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Delegates broadcasting a message to the wrapped user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to broadcast. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_a5e7d61818c5c2718bf69290879b70d92}{Decorator}}.
+
+\Hypertarget{classChataholic_a8267081a3e15824edae5deae80bd37ff}\label{classChataholic_a8267081a3e15824edae5deae80bd37ff} 
+\index{Chataholic@{Chataholic}!print@{print}}
+\index{print@{print}!Chataholic@{Chataholic}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily string Chataholic\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the user\textquotesingle{}s name with the \doxylink{classChataholic}{Chataholic} tag. 
+
+\begin{DoxyReturn}{Returns}
+Decorated user name string. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_a6c75937a5eb65056b7a3197bb1361401}{Decorator}}.
+
+\Hypertarget{classChataholic_a9c2d0e540d197054b9c6402856fbd3ca}\label{classChataholic_a9c2d0e540d197054b9c6402856fbd3ca} 
+\index{Chataholic@{Chataholic}!receive@{receive}}
+\index{receive@{receive}!Chataholic@{Chataholic}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily void Chataholic\+::receive (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Customizes message reception output for \doxylink{classChataholic}{Chataholic} users. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message received. \\
+\hline
+{\em from\+User} & Sender of the message. \\
+\hline
+{\em room} & Chat room where message was received. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_af5cad954fb35b96ce40b6001884aa278}{Decorator}}.
+
+\Hypertarget{classChataholic_ab346e33429bbeb2ec5ff07f47dce1196}\label{classChataholic_ab346e33429bbeb2ec5ff07f47dce1196} 
+\index{Chataholic@{Chataholic}!send@{send}}
+\index{send@{send}!Chataholic@{Chataholic}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily void Chataholic\+::send (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Delegates sending a message to the wrapped user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to send. \\
+\hline
+{\em room} & Target chat room. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_aec2d43c3718ce6810dec2caaafefb620}{Decorator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Chataholic_8h}{Chataholic.\+h}}\item 
+Chataholic.\+cpp\end{DoxyCompactItemize}

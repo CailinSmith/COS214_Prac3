@@ -1,0 +1,169 @@
+\doxysection{Vector\+Iterator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classVectorIterator}{}\label{classVectorIterator}\index{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}}
+
+
+\doxylink{classIterator}{Iterator} for traversing elements in the user and message vecotrs in other classes.  
+
+
+
+
+{\ttfamily \#include $<$Vector\+Iterator.\+h$>$}
+
+
+
+Inheritance diagram for Vector\+Iterator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for Vector\+Iterator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVectorIterator_aefc344d7d818887c8cd322bdb3d21513}{Vector\+Iterator}} (vector$<$ T $>$ \&list)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classVectorIterator}{Vector\+Iterator} for a given vector. \end{DoxyCompactList}\item 
+\Hypertarget{classVectorIterator_a3f36426537a0e02c9bc48f69d2e9bba9}\label{classVectorIterator_a3f36426537a0e02c9bc48f69d2e9bba9} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Vector\+Iterator} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVectorIterator_a8a354fdfeadeaefe1f50ebb828024a26}{first}} ()
+\begin{DoxyCompactList}\small\item\em Sets iterator to the first element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVectorIterator_a351dd88a0bb58a879c875dd0a1936bde}{next}} ()
+\begin{DoxyCompactList}\small\item\em moves iterator to the next element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVectorIterator_a802ed8232b31e643a68cd4417d0e96d7}{has\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are more elements to iterate. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classVectorIterator_a48511088a6e2cdfda4834a26561fda51}{current}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIterator}{Iterator$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVectorIterator_a703e1c0e968da7e09c6770de4efe3143}\label{classVectorIterator_a703e1c0e968da7e09c6770de4efe3143} 
+int {\bfseries current\+Position}
+\item 
+\Hypertarget{classVectorIterator_af59bf7ba8d08c7d5ac14147cf26c1319}\label{classVectorIterator_af59bf7ba8d08c7d5ac14147cf26c1319} 
+vector$<$ T $>$ \& {\bfseries list}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVectorIterator_a841f5378dd3b8ee3914b0654e662e19b}\label{classVectorIterator_a841f5378dd3b8ee3914b0654e662e19b} 
+class {\bfseries Chat\+Room}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Vector\+Iterator$<$ T $>$}
+\doxylink{classIterator}{Iterator} for traversing elements in the user and message vecotrs in other classes. 
+
+Attributes\+:
+\begin{DoxyItemize}
+\item current\+Position\+: Current index in the vector.
+\item list\+: Reference to the vector being iterated.
+\end{DoxyItemize}
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Provides methods to iterate, access elements, and check for end of collection. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements in the vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVectorIterator_aefc344d7d818887c8cd322bdb3d21513}\label{classVectorIterator_aefc344d7d818887c8cd322bdb3d21513} 
+\index{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!VectorIterator@{VectorIterator}}
+\index{VectorIterator@{VectorIterator}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{VectorIterator()}{VectorIterator()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classVectorIterator}{Vector\+Iterator}}$<$ T $>$\mbox{\hyperlink{classVectorIterator}{\+::\+Vector\+Iterator}} (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{list }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classVectorIterator}{Vector\+Iterator} for a given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Reference to the vector to iterate over. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVectorIterator_a48511088a6e2cdfda4834a26561fda51}\label{classVectorIterator_a48511088a6e2cdfda4834a26561fda51} 
+\index{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!current@{current}}
+\index{current@{current}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classVectorIterator}{Vector\+Iterator}}$<$ T $>$\+::current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the current element. 
+
+\begin{DoxyReturn}{Returns}
+The current element of type T. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_adba72cd398eeb61af49f805b25eb262f}{Iterator$<$ T $>$}}.
+
+\Hypertarget{classVectorIterator_a8a354fdfeadeaefe1f50ebb828024a26}\label{classVectorIterator_a8a354fdfeadeaefe1f50ebb828024a26} 
+\index{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!first@{first}}
+\index{first@{first}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classVectorIterator}{Vector\+Iterator}}$<$ T $>$\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets iterator to the first element. 
+
+
+
+Implements \mbox{\hyperlink{classIterator_a6f13cc79a1574086c63ce4ddba1d3d9f}{Iterator$<$ T $>$}}.
+
+\Hypertarget{classVectorIterator_a802ed8232b31e643a68cd4417d0e96d7}\label{classVectorIterator_a802ed8232b31e643a68cd4417d0e96d7} 
+\index{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classVectorIterator}{Vector\+Iterator}}$<$ T $>$\+::has\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are more elements to iterate. 
+
+\begin{DoxyReturn}{Returns}
+True if more elements exist, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_ac739493f5b0ef3333abf23c551e416f0}{Iterator$<$ T $>$}}.
+
+\Hypertarget{classVectorIterator_a351dd88a0bb58a879c875dd0a1936bde}\label{classVectorIterator_a351dd88a0bb58a879c875dd0a1936bde} 
+\index{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!next@{next}}
+\index{next@{next}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classVectorIterator}{Vector\+Iterator}}$<$ T $>$\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+moves iterator to the next element. 
+
+
+
+Implements \mbox{\hyperlink{classIterator_a94a7b0c50676cd9ee924eddece41d8d4}{Iterator$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{VectorIterator_8h}{Vector\+Iterator.\+h}}\end{DoxyCompactItemize}

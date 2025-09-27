@@ -1,0 +1,75 @@
+\doxysection{User.\+h}
+\hypertarget{User_8h_source}{}\label{User_8h_source}\mbox{\hyperlink{User_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ USER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ USER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AbstractUser_8h}{AbstractUser.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ChatRoom_8h}{ChatRoom.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SendMessageCommand_8h}{SendMessageCommand.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LogMessageCommand_8h}{LogMessageCommand.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BroadcastCommand_8h}{BroadcastCommand.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUser}{User}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00045\ \ \ \ \ vector<ChatRoom*>\ chatRooms;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{00047\ \ \ \ \ vector<Command*>\ commandQueue;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}{\string~User}}();\ }
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_abced2de4c95d498cfa10505b129e8c70}{send}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room);}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a44236724bf752d8f092a7c65ab460030}{broadcast}}(\textcolor{keywordtype}{string}\ message);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a316ac7b63f7393c9eb4a93c0e99adb43}{receive}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ fromUser,\ \mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a40b0f3772906a022151037db5aaea30f}{addCommand}}(\mbox{\hyperlink{classCommand}{Command}}*\ command);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a44388bdb8fb6accbe7fe143541c3d98d}{executeAll}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a50aae2d175df146264b4d7362da710ef}{addChatRoom}}(\mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room);}
+\DoxyCodeLine{00092\ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a407522c7fd471baa7c4b99b2659def17}{removeChatRoom}}(\mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{const}\ vector<ChatRoom*>\&\ \mbox{\hyperlink{classUser_a05936dde50012d36d81c570f5e411f58}{getChatRooms}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ chatRooms;\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classUser_ad7725794319d8587c2a69303a78a2e2b}{print}}();}
+\DoxyCodeLine{00110\ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}\ *\mbox{\hyperlink{classUser_ad418e34fb688e04e416b4abcb1fb2ddb}{removeDecorator}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\}}
+\DoxyCodeLine{00116\ \ \ \ \ }
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAlice}{Alice}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUser}{User}}\ \{}
+\DoxyCodeLine{00126\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classAlice_a20a96039c30fef2916c848edcff08873}{Alice}}()\ \{\ name\ =\ \textcolor{stringliteral}{"{}Alice"{}};\ \}}
+\DoxyCodeLine{00131\ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classAlice_a4adfb64b06cb1341de1f5a206e79ef89}{print}}()\ \{\ \textcolor{keywordflow}{return}\ name;\ \}}
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBob}{Bob}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUser}{User}}\ \{}
+\DoxyCodeLine{00146\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classBob_ae040cbfd1a95992a61556311f699df94}{Bob}}()\ \{\ name\ =\ \textcolor{stringliteral}{"{}Bob"{}};\ \}}
+\DoxyCodeLine{00151\ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classBob_aab4e0868ea645fff4b5356be24606037}{print}}()\ \{\ \textcolor{keywordflow}{return}\ name;\ \}}
+\DoxyCodeLine{00157\ \};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCharlie}{Charlie}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUser}{User}}\ \{}
+\DoxyCodeLine{00166\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{classCharlie_a4b9a1ffb281eac2a5494451ac8a44864}{Charlie}}()\ \{\ name\ =\ \textcolor{stringliteral}{"{}Charlie"{}};\ \}}
+\DoxyCodeLine{00171\ \ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classCharlie_a67c67b28b1e40bba806bcbb01ccd47ae}{print}}()\ \{\ \textcolor{keywordflow}{return}\ name;\ \}}
+\DoxyCodeLine{00177\ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{Decorator.\+h}
+\hypertarget{Decorator_8h_source}{}\label{Decorator_8h_source}\mbox{\hyperlink{Decorator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ DECORATOR\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ DECORATOR\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AbstractUser_8h}{AbstractUser.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDecorator}{Decorator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}\ *user;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ ownsUser;\ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classDecorator}{Decorator}}(\mbox{\hyperlink{classAbstractUser}{AbstractUser}}\ *user);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}\ *\mbox{\hyperlink{classDecorator_af3889e104e7eed457a41a8deb36a7218}{removeDecorator}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classDecorator_a3c67f74c83d839f2fd631e9bc44486bc}{\string~Decorator}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classDecorator_a6c75937a5eb65056b7a3197bb1361401}{print}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecorator_aec2d43c3718ce6810dec2caaafefb620}{send}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecorator_a5e7d61818c5c2718bf69290879b70d92}{broadcast}}(\textcolor{keywordtype}{string}\ message)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecorator_af5cad954fb35b96ce40b6001884aa278}{receive}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ fromUser,\ \mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecorator_a77c81755b8d5ba15857c8f88d82c760f}{addCommand}}(\mbox{\hyperlink{classCommand}{Command}}*\ command)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecorator_aab3158c80e18e549d44892dd7fa0d69d}{executeAll}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecorator_a4e79ad145e990dcbedc3af2ccc0d2a63}{addChatRoom}}(\mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecorator_a9c499a5ed2aacee73db20eb5d3fe2ade}{removeChatRoom}}(\mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,101 @@
+\doxysection{Broadcast\+Command Class Reference}
+\hypertarget{classBroadcastCommand}{}\label{classBroadcastCommand}\index{BroadcastCommand@{BroadcastCommand}}
+
+
+Concrete command that broadcasts a message to all chat rooms the user is a member of.  
+
+
+
+
+{\ttfamily \#include $<$Broadcast\+Command.\+h$>$}
+
+
+
+Inheritance diagram for Broadcast\+Command\+:
+% FIG 0
+
+
+Collaboration diagram for Broadcast\+Command\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBroadcastCommand_a64faf83656a3721e716743f647dae417}{Broadcast\+Command}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, string message)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classBroadcastCommand}{Broadcast\+Command}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBroadcastCommand_a5d04d68de1a10f1f06b1781757c7acea}{execute}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of execute that broadcasts message to all user\textquotesingle{}s chat rooms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_aea1fd655d78ae1f2ae3ea881fbe2c805}{Command}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes command with required parameters. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries room}
+\item 
+string {\bfseries message}
+\item 
+\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} {\bfseries from\+User}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete command that broadcasts a message to all chat rooms the user is a member of. 
+
+This class implements the \doxylink{classCommand}{Command} pattern for broadcasting functionality. When executed, it sends the same message to every chat room that the user has joined, allowing for efficient multi-\/room communication.
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Stores broadcast message and sender information
+\item Executes broadcast by sending message to all user\textquotesingle{}s chat rooms
+\item Works with \doxylink{classUser}{User} class to access chat room memberships 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBroadcastCommand_a64faf83656a3721e716743f647dae417}\label{classBroadcastCommand_a64faf83656a3721e716743f647dae417} 
+\index{BroadcastCommand@{BroadcastCommand}!BroadcastCommand@{BroadcastCommand}}
+\index{BroadcastCommand@{BroadcastCommand}!BroadcastCommand@{BroadcastCommand}}
+\doxysubsubsection{\texorpdfstring{BroadcastCommand()}{BroadcastCommand()}}
+{\footnotesize\ttfamily Broadcast\+Command\+::\+Broadcast\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User,  }\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{classBroadcastCommand}{Broadcast\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+User} & Pointer to the user who wants to broadcast the message \\
+\hline
+{\em message} & The message content to broadcast to all rooms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Sets room parameter to nullptr since broadcast targets multiple rooms 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBroadcastCommand_a5d04d68de1a10f1f06b1781757c7acea}\label{classBroadcastCommand_a5d04d68de1a10f1f06b1781757c7acea} 
+\index{BroadcastCommand@{BroadcastCommand}!execute@{execute}}
+\index{execute@{execute}!BroadcastCommand@{BroadcastCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Broadcast\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of execute that broadcasts message to all user\textquotesingle{}s chat rooms. 
+
+Casts the \doxylink{classAbstractUser}{Abstract\+User} to \doxylink{classUser}{User} to access chat room memberships, then iterates through all rooms and sends the message to each one via the \doxylink{classChatRoom}{Chat\+Room}\textquotesingle{}s send\+Message method. 
+
+Implements \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{BroadcastCommand_8h}{Broadcast\+Command.\+h}}\item 
+Broadcast\+Command.\+cpp\end{DoxyCompactItemize}

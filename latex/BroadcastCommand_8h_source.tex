@@ -1,0 +1,25 @@
+\doxysection{Broadcast\+Command.\+h}
+\hypertarget{BroadcastCommand_8h_source}{}\label{BroadcastCommand_8h_source}\mbox{\hyperlink{BroadcastCommand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ BROADCASTCOMMAND\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BROADCASTCOMMAND\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AbstractUser_8h}{AbstractUser.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ChatRoom_8h}{ChatRoom.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBroadcastCommand}{BroadcastCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCommand}{Command}}\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classBroadcastCommand_a64faf83656a3721e716743f647dae417}{BroadcastCommand}}(\mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ fromUser,\ \textcolor{keywordtype}{string}\ message)\ :\ \mbox{\hyperlink{classCommand}{Command}}(fromUser,\ message,\ nullptr)\ \{\}}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBroadcastCommand_a5d04d68de1a10f1f06b1781757c7acea}{execute}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

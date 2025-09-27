@@ -1,0 +1,223 @@
+\doxysection{Abstract\+User Class Reference}
+\hypertarget{classAbstractUser}{}\label{classAbstractUser}\index{AbstractUser@{AbstractUser}}
+
+
+Abstract base for users and decorators to allow them to be treated the same.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+User.\+h$>$}
+
+
+
+Inheritance diagram for Abstract\+User\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAbstractUser_a092a75bf98d279bb794249430fb742fd}\label{classAbstractUser_a092a75bf98d279bb794249430fb742fd} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+User} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractUser_a0c0efb11e62cfa87448ac1360519bc60}{send}} (string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Sends a message to a chat room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractUser_aa2556508b0253455cb831e0f962e1871}{broadcast}} (string message)=0
+\begin{DoxyCompactList}\small\item\em Broadcasts a message to all chat rooms. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractUser_a7483f0c8a1f24ae2710f42dfb0ead60d}{receive}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Receives a message from another user in a chat room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractUser_adb0f1330f275c23584df898009689fe6}{add\+Command}} (\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}command)=0
+\begin{DoxyCompactList}\small\item\em Adds a command to the user\textquotesingle{}s command queue. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractUser_ad693a2255a44a2f91df5e1964180d6f5}{execute\+All}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes all commands in the user\textquotesingle{}s command queue. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractUser_ab3793bf7ab75d6bb8f60225e5e053d56}{add\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Registers the user in a chat room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractUser_a4b2298639b4bbdf5f96961a2307d6075}{remove\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Removes the user from a chat room. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classAbstractUser_a83c85edd1b49ee6fe97ff42950d909eb}{remove\+Decorator}} ()=0
+\begin{DoxyCompactList}\small\item\em Removes a decorator, returning the wrapped user (or self if not decorated). \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classAbstractUser_a3d2e0c6634545bcd3d3c0f1c9c158158}{print}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the user\textquotesingle{}s name or decorated tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base for users and decorators to allow them to be treated the same. 
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Defines the interface for user actions and decorator extension. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAbstractUser_ab3793bf7ab75d6bb8f60225e5e053d56}\label{classAbstractUser_ab3793bf7ab75d6bb8f60225e5e053d56} 
+\index{AbstractUser@{AbstractUser}!addChatRoom@{addChatRoom}}
+\index{addChatRoom@{addChatRoom}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{addChatRoom()}{addChatRoom()}}
+{\footnotesize\ttfamily virtual void Abstract\+User\+::add\+Chat\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers the user in a chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Chat room to register in. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUser_a50aae2d175df146264b4d7362da710ef}{User}}, and \mbox{\hyperlink{classDecorator_a4e79ad145e990dcbedc3af2ccc0d2a63}{Decorator}}.
+
+\Hypertarget{classAbstractUser_adb0f1330f275c23584df898009689fe6}\label{classAbstractUser_adb0f1330f275c23584df898009689fe6} 
+\index{AbstractUser@{AbstractUser}!addCommand@{addCommand}}
+\index{addCommand@{addCommand}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{addCommand()}{addCommand()}}
+{\footnotesize\ttfamily virtual void Abstract\+User\+::add\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a command to the user\textquotesingle{}s command queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \doxylink{classCommand}{Command} to add. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUser_a40b0f3772906a022151037db5aaea30f}{User}}, and \mbox{\hyperlink{classDecorator_a77c81755b8d5ba15857c8f88d82c760f}{Decorator}}.
+
+\Hypertarget{classAbstractUser_aa2556508b0253455cb831e0f962e1871}\label{classAbstractUser_aa2556508b0253455cb831e0f962e1871} 
+\index{AbstractUser@{AbstractUser}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{broadcast()}{broadcast()}}
+{\footnotesize\ttfamily virtual void Abstract\+User\+::broadcast (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Broadcasts a message to all chat rooms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to broadcast. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUser_a44236724bf752d8f092a7c65ab460030}{User}}, \mbox{\hyperlink{classAnimalLover_a8b5971a2813fa74b03a8a99bd5f98c25}{Animal\+Lover}}, \mbox{\hyperlink{classChataholic_a72018911098c838321a9f3674c69db3f}{Chataholic}}, and \mbox{\hyperlink{classDecorator_a5e7d61818c5c2718bf69290879b70d92}{Decorator}}.
+
+\Hypertarget{classAbstractUser_ad693a2255a44a2f91df5e1964180d6f5}\label{classAbstractUser_ad693a2255a44a2f91df5e1964180d6f5} 
+\index{AbstractUser@{AbstractUser}!executeAll@{executeAll}}
+\index{executeAll@{executeAll}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{executeAll()}{executeAll()}}
+{\footnotesize\ttfamily virtual void Abstract\+User\+::execute\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executes all commands in the user\textquotesingle{}s command queue. 
+
+
+
+Implemented in \mbox{\hyperlink{classUser_a44388bdb8fb6accbe7fe143541c3d98d}{User}}, and \mbox{\hyperlink{classDecorator_aab3158c80e18e549d44892dd7fa0d69d}{Decorator}}.
+
+\Hypertarget{classAbstractUser_a3d2e0c6634545bcd3d3c0f1c9c158158}\label{classAbstractUser_a3d2e0c6634545bcd3d3c0f1c9c158158} 
+\index{AbstractUser@{AbstractUser}!print@{print}}
+\index{print@{print}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual string Abstract\+User\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the user\textquotesingle{}s name or decorated tag. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classUser}{User} name/tag string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classAnimalLover_a3d269de3bc1a84c809ac28d873c4fad0}{Animal\+Lover}}, \mbox{\hyperlink{classChataholic_a8267081a3e15824edae5deae80bd37ff}{Chataholic}}, \mbox{\hyperlink{classDecorator_a6c75937a5eb65056b7a3197bb1361401}{Decorator}}, \mbox{\hyperlink{classUser_ad7725794319d8587c2a69303a78a2e2b}{User}}, \mbox{\hyperlink{classAlice_a4adfb64b06cb1341de1f5a206e79ef89}{Alice}}, \mbox{\hyperlink{classBob_aab4e0868ea645fff4b5356be24606037}{Bob}}, and \mbox{\hyperlink{classCharlie_a67c67b28b1e40bba806bcbb01ccd47ae}{Charlie}}.
+
+\Hypertarget{classAbstractUser_a7483f0c8a1f24ae2710f42dfb0ead60d}\label{classAbstractUser_a7483f0c8a1f24ae2710f42dfb0ead60d} 
+\index{AbstractUser@{AbstractUser}!receive@{receive}}
+\index{receive@{receive}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily virtual void Abstract\+User\+::receive (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Receives a message from another user in a chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message received. \\
+\hline
+{\em from\+User} & Sender of the message. \\
+\hline
+{\em room} & Chat room where message was received. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUser_a316ac7b63f7393c9eb4a93c0e99adb43}{User}}, \mbox{\hyperlink{classAnimalLover_ae819830afae4b296873884ecde32b7e3}{Animal\+Lover}}, \mbox{\hyperlink{classChataholic_a9c2d0e540d197054b9c6402856fbd3ca}{Chataholic}}, and \mbox{\hyperlink{classDecorator_af5cad954fb35b96ce40b6001884aa278}{Decorator}}.
+
+\Hypertarget{classAbstractUser_a4b2298639b4bbdf5f96961a2307d6075}\label{classAbstractUser_a4b2298639b4bbdf5f96961a2307d6075} 
+\index{AbstractUser@{AbstractUser}!removeChatRoom@{removeChatRoom}}
+\index{removeChatRoom@{removeChatRoom}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{removeChatRoom()}{removeChatRoom()}}
+{\footnotesize\ttfamily virtual void Abstract\+User\+::remove\+Chat\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes the user from a chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Chat room to remove from. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUser_a407522c7fd471baa7c4b99b2659def17}{User}}, and \mbox{\hyperlink{classDecorator_a9c499a5ed2aacee73db20eb5d3fe2ade}{Decorator}}.
+
+\Hypertarget{classAbstractUser_a83c85edd1b49ee6fe97ff42950d909eb}\label{classAbstractUser_a83c85edd1b49ee6fe97ff42950d909eb} 
+\index{AbstractUser@{AbstractUser}!removeDecorator@{removeDecorator}}
+\index{removeDecorator@{removeDecorator}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{removeDecorator()}{removeDecorator()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} Abstract\+User\+::remove\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes a decorator, returning the wrapped user (or self if not decorated). 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the underlying \doxylink{classAbstractUser}{Abstract\+User}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDecorator_af3889e104e7eed457a41a8deb36a7218}{Decorator}}, and \mbox{\hyperlink{classUser_ad418e34fb688e04e416b4abcb1fb2ddb}{User}}.
+
+\Hypertarget{classAbstractUser_a0c0efb11e62cfa87448ac1360519bc60}\label{classAbstractUser_a0c0efb11e62cfa87448ac1360519bc60} 
+\index{AbstractUser@{AbstractUser}!send@{send}}
+\index{send@{send}!AbstractUser@{AbstractUser}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily virtual void Abstract\+User\+::send (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sends a message to a chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to send. \\
+\hline
+{\em room} & Target chat room. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUser_abced2de4c95d498cfa10505b129e8c70}{User}}, \mbox{\hyperlink{classAnimalLover_ac7befda2acf8941eb209c391cf1cea4a}{Animal\+Lover}}, \mbox{\hyperlink{classChataholic_ab346e33429bbeb2ec5ff07f47dce1196}{Chataholic}}, and \mbox{\hyperlink{classDecorator_aec2d43c3718ce6810dec2caaafefb620}{Decorator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AbstractUser_8h}{Abstract\+User.\+h}}\end{DoxyCompactItemize}

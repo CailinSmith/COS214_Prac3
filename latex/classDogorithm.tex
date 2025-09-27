@@ -1,0 +1,85 @@
+\doxysection{Dogorithm Class Reference}
+\hypertarget{classDogorithm}{}\label{classDogorithm}\index{Dogorithm@{Dogorithm}}
+
+
+Concrete chat room implementation for Dogorithm-\/themed discussions.  
+
+
+
+
+{\ttfamily \#include $<$Dogorithm.\+h$>$}
+
+
+
+Inheritance diagram for Dogorithm\+:
+% FIG 0
+
+
+Collaboration diagram for Dogorithm\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classDogorithm_a884efdb64b3e91bc73987d96e60d0371}{print}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of print method that returns room identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classChatRoom}{Chat\+Room}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chat\+Room} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor that cleans up chat history. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_af1e6380289d7d204bd5cfd43b257f560}{register\+User}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Register a user with the chat room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_a710dd4abd1572da62a5d73a15739ff51}{send\+Message}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User)
+\begin{DoxyCompactList}\small\item\em Send a message from one user to all other users in the room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_a6d59b3f078f8595080f3b43e2de48adb}{save\+Message}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User)
+\begin{DoxyCompactList}\small\item\em Save a message to the chat room\textquotesingle{}s persistent history. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChatRoom_ad5b54f47a8055e85f8aee5f14f0aa03b}{remove\+User}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Remove a user from the chat room. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}}$<$ \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classChatRoom_a2a3fc4fd4cc3184e05ee2e377aff3514}{create\+User\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Create an iterator for traversing users in the chat room. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}}$<$ string \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classChatRoom_af99a37484c406e78c0404ebf6fa17180}{create\+Message\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Create an iterator for traversing chat message history. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classChatRoom_a53bbc2333b6805aeefac7d3b2eb0e8fd}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Check if the chat room is empty (no users) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCollection}{Collection}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete chat room implementation for Dogorithm-\/themed discussions. 
+
+This class extends \doxylink{classChatRoom}{Chat\+Room} to provide a specific themed chat room. It inherits all mediator functionality from \doxylink{classChatRoom}{Chat\+Room} and provides its own identification through the print method.
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Inherits all \doxylink{classChatRoom}{Chat\+Room} mediator functionality
+\item Provides specific room identification as "{}\+Dogorithm"{}
+\item Serves as concrete mediator for Dogorithm-\/themed conversations 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDogorithm_a884efdb64b3e91bc73987d96e60d0371}\label{classDogorithm_a884efdb64b3e91bc73987d96e60d0371} 
+\index{Dogorithm@{Dogorithm}!print@{print}}
+\index{print@{print}!Dogorithm@{Dogorithm}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily string Dogorithm\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of print method that returns room identifier. 
+
+\begin{DoxyReturn}{Returns}
+String "{}\+Dogorithm"{} identifying this specific chat room type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classChatRoom_a4d6b5d3e012027323160fb0c7d5e2e29}{Chat\+Room}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Dogorithm_8h}{Dogorithm.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,108 @@
+\doxysection{Command Class Reference}
+\hypertarget{classCommand}{}\label{classCommand}\index{Command@{Command}}
+
+
+Abstract base class implementing the \doxylink{classCommand}{Command} pattern for deferred execution.  
+
+
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+
+
+Inheritance diagram for Command\+:
+% FIG 0
+
+
+Collaboration diagram for Command\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_aea1fd655d78ae1f2ae3ea881fbe2c805}{Command}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes command with required parameters. \end{DoxyCompactList}\item 
+\Hypertarget{classCommand_aa545a53d35818f9efb936daf3fa16c61}\label{classCommand_aa545a53d35818f9efb936daf3fa16c61} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic cleanup. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Execute the command\textquotesingle{}s specific functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCommand_ac38d7713bb9660a23a752a2a2c938dd5}\label{classCommand_ac38d7713bb9660a23a752a2a2c938dd5} 
+\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries room}
+\item 
+\Hypertarget{classCommand_a21dc372c4c13f6c1fc91751b8d94c916}\label{classCommand_a21dc372c4c13f6c1fc91751b8d94c916} 
+string {\bfseries message}
+\item 
+\Hypertarget{classCommand_adfb2d900e4592ae272bf331257dabea7}\label{classCommand_adfb2d900e4592ae272bf331257dabea7} 
+\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} {\bfseries from\+User}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class implementing the \doxylink{classCommand}{Command} pattern for deferred execution. 
+
+This class serves as the \doxylink{classCommand}{Command} interface in the \doxylink{classCommand}{Command} pattern, allowing for encapsulation of messaging operations that can be queued and executed later. All concrete command implementations inherit from this class.
+
+Attributes\+:
+\begin{DoxyItemize}
+\item room\+: Pointer to the chat room where the command should be executed
+\item message\+: The message content associated with the command
+\item from\+User\+: Pointer to the user who initiated the command
+\end{DoxyItemize}
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Stores command parameters for deferred execution
+\item Defines interface for command execution
+\item Provides base functionality for concrete command implementations
+\item Enables undo/redo functionality and command queuing 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCommand_aea1fd655d78ae1f2ae3ea881fbe2c805}\label{classCommand_aea1fd655d78ae1f2ae3ea881fbe2c805} 
+\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{Command()}{Command()}}
+{\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User,  }\item[{string}]{message,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes command with required parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+User} & Pointer to the user who initiated the command \\
+\hline
+{\em message} & The message content associated with the command \\
+\hline
+{\em room} & Pointer to the chat room where command should be executed \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}\label{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7} 
+\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual void Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Execute the command\textquotesingle{}s specific functionality. 
+
+\begin{DoxyNote}{Note}
+Pure virtual function -\/ must be implemented in subclasses 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classBroadcastCommand_a5d04d68de1a10f1f06b1781757c7acea}{Broadcast\+Command}}, \mbox{\hyperlink{classLogMessageCommand_a3be555c3679074b6644bc058fbc6c683}{Log\+Message\+Command}}, and \mbox{\hyperlink{classSendMessageCommand_a1393dfb26e5e5c580c87fb1f0aa38276}{Send\+Message\+Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Command_8h}{Command.\+h}}\end{DoxyCompactItemize}

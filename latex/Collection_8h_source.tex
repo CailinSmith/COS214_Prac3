@@ -1,0 +1,28 @@
+\doxysection{Collection.\+h}
+\hypertarget{Collection_8h_source}{}\label{Collection_8h_source}\mbox{\hyperlink{Collection_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ COLLECTION\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ COLLECTION\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Iterator_8h}{Iterator.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAbstractUser}{AbstractUser}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCollection}{Collection}}\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCollection_ab3938d189a8186230a7999cfa465d37f}{\string~Collection}}()\{\};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classIterator}{Iterator<AbstractUser*>}}*\ \mbox{\hyperlink{classCollection_a3bab57ff163417e6ac6313319dc2f391}{createUserIterator}}()\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classIterator}{Iterator<string*>}}*\ \mbox{\hyperlink{classCollection_a341fffabb5c20dc305c08c9368d86fd2}{createMessageIterator}}()\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCollection_a774f22e3bdac705a397b447b4ac77b2e}{isEmpty}}()\ =\ 0;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
