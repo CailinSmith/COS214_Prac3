@@ -1,0 +1,175 @@
+\doxysection{Dog\+Whisperer Class Reference}
+\hypertarget{classDogWhisperer}{}\label{classDogWhisperer}\index{DogWhisperer@{DogWhisperer}}
+
+
+Concrete decorator that adds a green "{}\+Dog Whisperer"{} tag to user names.  
+
+
+
+
+{\ttfamily \#include $<$Dog\+Whisperer.\+h$>$}
+
+
+
+Inheritance diagram for Dog\+Whisperer\+:
+% FIG 0
+
+
+Collaboration diagram for Dog\+Whisperer\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDogWhisperer_af609ea347f38281a3a53cc2c47733d90}{Dog\+Whisperer}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classDogWhisperer}{Dog\+Whisperer} decorator wrapping the given user. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classDogWhisperer_a2a1b470f1f2f07d7c17aa2c603129e7d}{print}} () override
+\begin{DoxyCompactList}\small\item\em Returns the user\textquotesingle{}s name with green dog whisperer tag. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDogWhisperer_a10ed2b52d12dc819834826bb0afe43ba}{send}} (string message, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Delegates message sending to the base decorator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDogWhisperer_af626dfcb765fb4307d7613c80e0f385a}{broadcast}} (string message) override
+\begin{DoxyCompactList}\small\item\em Delegates message broadcasting to the base decorator ~\newline
+ \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDogWhisperer_a12445fba76cc7f171c0a2a90e52c4b91}{receive}} (string message, \mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Handles message reception with dog whisperer role display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classDecorator}{Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDecorator_a5429dc2644e8afa59f679b226e051e5b}{Decorator}} (\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classDecorator}{Decorator} wrapping the given \doxylink{classAbstractUser}{Abstract\+User}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDecorator_af3889e104e7eed457a41a8deb36a7218}{remove\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Removes the decorator, returning the wrapped user. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Decorator} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Deletes wrapped user if owned. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_a77c81755b8d5ba15857c8f88d82c760f}{add\+Command}} (\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}command) override
+\begin{DoxyCompactList}\small\item\em Delegates adding a command to the wrapped user. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_aab3158c80e18e549d44892dd7fa0d69d}{execute\+All}} () override
+\begin{DoxyCompactList}\small\item\em Delegates executing all commands to the wrapped user. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_a4e79ad145e990dcbedc3af2ccc0d2a63}{add\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Registers the decorator in the given chat room. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDecorator_a9c499a5ed2aacee73db20eb5d3fe2ade}{remove\+Chat\+Room}} (\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Delegates chat room removal to the wrapped user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAbstractUser}{Abstract\+User}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+User} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete decorator that adds a green "{}\+Dog Whisperer"{} tag to user names. 
+
+This decorator extends user functionality by adding a green-\/colored role tag that appears when the user\textquotesingle{}s name is displayed. Inspired by Discord-\/style roles.
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Adds green "{}(\+Dog Whisperer)"{} tag to user names
+\item Maintains all \doxylink{classAbstractUser}{Abstract\+User} functionality through delegation
+\item Provides custom message receiving behavior with role display 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDogWhisperer_af609ea347f38281a3a53cc2c47733d90}\label{classDogWhisperer_af609ea347f38281a3a53cc2c47733d90} 
+\index{DogWhisperer@{DogWhisperer}!DogWhisperer@{DogWhisperer}}
+\index{DogWhisperer@{DogWhisperer}!DogWhisperer@{DogWhisperer}}
+\doxysubsubsection{\texorpdfstring{DogWhisperer()}{DogWhisperer()}}
+{\footnotesize\ttfamily Dog\+Whisperer\+::\+Dog\+Whisperer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{user }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classDogWhisperer}{Dog\+Whisperer} decorator wrapping the given user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Pointer to the \doxylink{classAbstractUser}{Abstract\+User} to decorate with dog whisperer role \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDogWhisperer_af626dfcb765fb4307d7613c80e0f385a}\label{classDogWhisperer_af626dfcb765fb4307d7613c80e0f385a} 
+\index{DogWhisperer@{DogWhisperer}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!DogWhisperer@{DogWhisperer}}
+\doxysubsubsection{\texorpdfstring{broadcast()}{broadcast()}}
+{\footnotesize\ttfamily void Dog\+Whisperer\+::broadcast (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Delegates message broadcasting to the base decorator ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message content to broadcast to all rooms \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_a5e7d61818c5c2718bf69290879b70d92}{Decorator}}.
+
+\Hypertarget{classDogWhisperer_a2a1b470f1f2f07d7c17aa2c603129e7d}\label{classDogWhisperer_a2a1b470f1f2f07d7c17aa2c603129e7d} 
+\index{DogWhisperer@{DogWhisperer}!print@{print}}
+\index{print@{print}!DogWhisperer@{DogWhisperer}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily string Dog\+Whisperer\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the user\textquotesingle{}s name with green dog whisperer tag. 
+
+\begin{DoxyReturn}{Returns}
+String containing the decorated user name with green "{}(\+Dog Whisperer)"{} tag 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_a6c75937a5eb65056b7a3197bb1361401}{Decorator}}.
+
+\Hypertarget{classDogWhisperer_a12445fba76cc7f171c0a2a90e52c4b91}\label{classDogWhisperer_a12445fba76cc7f171c0a2a90e52c4b91} 
+\index{DogWhisperer@{DogWhisperer}!receive@{receive}}
+\index{receive@{receive}!DogWhisperer@{DogWhisperer}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily void Dog\+Whisperer\+::receive (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classAbstractUser}{Abstract\+User}} \texorpdfstring{$\ast$}{*}}]{from\+User,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles message reception with dog whisperer role display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message content received \\
+\hline
+{\em from\+User} & Sender of the message \\
+\hline
+{\em room} & Chat room where message was received \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_af5cad954fb35b96ce40b6001884aa278}{Decorator}}.
+
+\Hypertarget{classDogWhisperer_a10ed2b52d12dc819834826bb0afe43ba}\label{classDogWhisperer_a10ed2b52d12dc819834826bb0afe43ba} 
+\index{DogWhisperer@{DogWhisperer}!send@{send}}
+\index{send@{send}!DogWhisperer@{DogWhisperer}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily void Dog\+Whisperer\+::send (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{classChatRoom}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Delegates message sending to the base decorator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message content to send \\
+\hline
+{\em room} & Target chat room for the message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDecorator_aec2d43c3718ce6810dec2caaafefb620}{Decorator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DogWhisperer_8h}{Dog\+Whisperer.\+h}}\item 
+Dog\+Whisperer.\+cpp\end{DoxyCompactItemize}
