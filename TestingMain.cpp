@@ -372,6 +372,123 @@ void testAdditionalFunctions() {
     cout << "=== Additional Functions Test Complete ===" << endl;
 }
 
+void testNewDecoratorsAndCoverage() {
+    cout << "=== Testing New Decorators and Coverage Enhancement ===" << endl << endl;
+    
+    ChatRoom* dogorithmRoom = new Dogorithm();
+    ChatRoom* ctrlCatRoom = new CtrlCat();
+    cout << "   - Created test rooms: " << dogorithmRoom->print() << " and " << ctrlCatRoom->print() << endl;
+    
+    AbstractUser* alice = new Alice();
+    AbstractUser* bob = new Bob();
+    AbstractUser* charlie = new Charlie();
+    cout << "   - Created base users" << endl << endl;
+    
+    cout << "=== Test 1: DogWhisperer Decorator ===" << endl;
+    alice = new DogWhisperer(alice);
+    cout << "   - Alice decorated as: " << alice->print() << endl;
+    
+    alice->addChatRoom(dogorithmRoom);
+    alice->send("Woof! I can understand all dogs!", dogorithmRoom);
+    alice->executeAll();
+    cout << "   - DogWhisperer send functionality tested" << endl << endl;
+    
+    cout << "=== Test 2: VIPUser Decorator ===" << endl;
+    bob = new VIPUser(bob);
+    cout << "   - Bob decorated as: " << bob->print() << endl;
+    
+    bob->addChatRoom(dogorithmRoom);
+    cout << "   - VIP Priority messaging test:" << endl;
+    bob->send("I demand VIP treatment!", dogorithmRoom);
+    bob->executeAll();
+    cout << "   - VIP send functionality with priority tested" << endl << endl;
+    
+    cout << "=== Test 3: Multi-layered Decorators ===" << endl;
+    charlie = new Chataholic(charlie);
+    charlie = new AnimalLover(charlie);
+    charlie = new VIPUser(charlie);
+    cout << "   - Charlie with triple decoration: " << charlie->print() << endl;
+    
+    charlie->addChatRoom(ctrlCatRoom);
+    cout << "   - Triple decorated user messaging:" << endl;
+    charlie->send("I'm a VIP chatty animal lover!", ctrlCatRoom);
+    charlie->executeAll();
+    cout << "   - Multi-layer decorator functionality tested" << endl << endl;
+    
+    cout << "=== Test 4: Broadcast with New Decorators ===" << endl;
+    alice->addChatRoom(ctrlCatRoom);
+    bob->addChatRoom(ctrlCatRoom);
+    
+    cout << "   - DogWhisperer broadcast test:" << endl;
+    alice->broadcast("Broadcasting to all dog lovers!");
+    alice->executeAll();
+    
+    cout << "   - VIP broadcast test (should show priority):" << endl;
+    bob->broadcast("VIP broadcast announcement!");
+    bob->executeAll();
+    cout << "   - Broadcast functionality with new decorators tested" << endl << endl;
+    
+    cout << "=== Test 5: Decorator Removal Testing ===" << endl;
+    cout << "   - Charlie before removal: " << charlie->print() << endl;
+    
+    AbstractUser* vipDecorator = charlie;
+    charlie = charlie->removeDecorator();
+    delete vipDecorator;
+    cout << "   - After removing VIP: " << charlie->print() << endl;
+    
+    AbstractUser* animalDecorator = charlie;
+    charlie = charlie->removeDecorator();
+    delete animalDecorator;
+    cout << "   - After removing AnimalLover: " << charlie->print() << endl;
+    
+    AbstractUser* chataDecorator = charlie;
+    charlie = charlie->removeDecorator();
+    delete chataDecorator;
+    cout << "   - After removing Chataholic: " << charlie->print() << endl << endl;
+    
+    cout << "=== Test 6: All Decorator Types Display ===" << endl;
+    AbstractUser* testUser1 = new Chataholic(new Alice());
+    AbstractUser* testUser2 = new AnimalLover(new Bob());  
+    AbstractUser* testUser3 = new DogWhisperer(new Charlie());
+    AbstractUser* testUser4 = new VIPUser(new Alice());
+    
+    cout << "   - All decorator types:" << endl;
+    cout << "     * " << testUser1->print() << endl;
+    cout << "     * " << testUser2->print() << endl;
+    cout << "     * " << testUser3->print() << endl;
+    cout << "     * " << testUser4->print() << endl << endl;
+    
+    cout << "=== Test 7: Mixed Decorator Communication ===" << endl;
+    testUser1->addChatRoom(dogorithmRoom);
+    testUser2->addChatRoom(dogorithmRoom);
+    testUser3->addChatRoom(dogorithmRoom);
+    testUser4->addChatRoom(dogorithmRoom);
+    
+    cout << "   - Mixed decorator group messaging:" << endl;
+    testUser1->send("Chataholic says hi!", dogorithmRoom);
+    testUser2->send("Animal lover here!", dogorithmRoom);
+    testUser3->send("Dog whisperer reporting!", dogorithmRoom);
+    testUser4->send("VIP entering the chat!", dogorithmRoom);
+    
+    testUser1->executeAll();
+    testUser2->executeAll();
+    testUser3->executeAll();
+    testUser4->executeAll();
+    cout << "   - All decorator types communication tested" << endl << endl;
+    
+    delete alice;
+    delete bob;
+    delete charlie;
+    delete testUser1;
+    delete testUser2;
+    delete testUser3;
+    delete testUser4;
+    delete dogorithmRoom;
+    delete ctrlCatRoom;
+    
+    cout << "=== New Decorators and Coverage Test Complete ===" << endl;
+}
+
 
 int main()
 {
@@ -380,6 +497,7 @@ int main()
     testDecorator();
     testChatRoomManagementAndBroadcast();
     testAdditionalFunctions();
+    testNewDecoratorsAndCoverage();
 
     return 0;
 }
