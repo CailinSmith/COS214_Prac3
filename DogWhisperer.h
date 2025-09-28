@@ -35,6 +35,11 @@ public:
 	DogWhisperer(AbstractUser* user);
 
 	/**
+	 * @brief Destructor.
+	 */
+	virtual ~DogWhisperer(){};
+
+	/**
 	 * @brief Returns the user's name with green dog whisperer tag
 	 * @return String containing the decorated user name with green "(Dog Whisperer)" tag
 	 */

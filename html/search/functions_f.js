@@ -7,7 +7,9 @@ var searchData=
   ['_7ecollection_4',['~Collection',['../classCollection.html#ab3938d189a8186230a7999cfa465d37f',1,'Collection']]],
   ['_7ecommand_5',['~Command',['../classCommand.html#aa545a53d35818f9efb936daf3fa16c61',1,'Command']]],
   ['_7edecorator_6',['~Decorator',['../classDecorator.html#a3c67f74c83d839f2fd631e9bc44486bc',1,'Decorator']]],
-  ['_7eiterator_7',['~Iterator',['../classIterator.html#a9e5aab5b020f674497ee9752ab31db8a',1,'Iterator']]],
-  ['_7euser_8',['~User',['../classUser.html#ac00b72ad64eb4149f7b21b9f5468c2b2',1,'User']]],
-  ['_7evectoriterator_9',['~VectorIterator',['../classVectorIterator.html#a3f36426537a0e02c9bc48f69d2e9bba9',1,'VectorIterator']]]
+  ['_7edogwhisperer_7',['~DogWhisperer',['../classDogWhisperer.html#a15e8e360a0c9199500f26c5ab0f594a2',1,'DogWhisperer']]],
+  ['_7eiterator_8',['~Iterator',['../classIterator.html#a9e5aab5b020f674497ee9752ab31db8a',1,'Iterator']]],
+  ['_7euser_9',['~User',['../classUser.html#ac00b72ad64eb4149f7b21b9f5468c2b2',1,'User']]],
+  ['_7evectoriterator_10',['~VectorIterator',['../classVectorIterator.html#a3f36426537a0e02c9bc48f69d2e9bba9',1,'VectorIterator']]],
+  ['_7evipuser_11',['~VIPUser',['../classVIPUser.html#a5388b68dd366ceaf6df1dc3f56814e5a',1,'VIPUser']]]
 ];
