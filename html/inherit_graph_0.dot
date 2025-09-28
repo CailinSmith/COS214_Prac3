@@ -12,12 +12,16 @@ digraph "Graphical Class Hierarchy"
   Node2 [id="Node000002",label="AnimalLover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classAnimalLover.html",tooltip="Decorator that adds a blue \"Animal Lover\" tag to the user's name and customizes message output."];
   Node1 -> Node3 [id="edge3_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Chataholic",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classChataholic.html",tooltip="Decorator that adds a purple \"Chataholic\" tag to the user's name and customizes message output."];
-  Node0 -> Node4 [id="edge4_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="User",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classUser.html",tooltip="Concrete implementation of AbstractUser that manages chat room memberships and command execution."];
-  Node4 -> Node5 [id="edge5_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="Alice",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classAlice.html",tooltip="Concrete user implementation representing Alice."];
-  Node4 -> Node6 [id="edge6_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="Bob",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classBob.html",tooltip="Concrete user implementation representing Bob."];
-  Node4 -> Node7 [id="edge7_Node000004_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="Charlie",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCharlie.html",tooltip="Concrete user implementation representing Charlie."];
+  Node1 -> Node4 [id="edge4_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="DogWhisperer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classDogWhisperer.html",tooltip="Concrete decorator that adds a green \"Dog Whisperer\" tag to user names."];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="VIPUser",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVIPUser.html",tooltip="Concrete decorator that adds VIP status and priority messaging to users."];
+  Node0 -> Node6 [id="edge6_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="User",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classUser.html",tooltip="Concrete implementation of AbstractUser that manages chat room memberships and command execution."];
+  Node6 -> Node7 [id="edge7_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Alice",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classAlice.html",tooltip="Concrete user implementation representing Alice."];
+  Node6 -> Node8 [id="edge8_Node000006_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Bob",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classBob.html",tooltip="Concrete user implementation representing Bob."];
+  Node6 -> Node9 [id="edge9_Node000006_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Charlie",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCharlie.html",tooltip="Concrete user implementation representing Charlie."];
 }

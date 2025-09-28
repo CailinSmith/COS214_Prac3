@@ -11,4 +11,8 @@ digraph "Decorator.h"
   Node3 [id="Node000003",label="Chataholic.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Chataholic_8h.html",tooltip="Decorator for users who are chatty, adds purple tag to user name."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="Decorator.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Decorator_8cpp.html",tooltip="Implementation of the Decorator base class for AbstractUser extension."];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="DogWhisperer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$DogWhisperer_8h.html",tooltip="Concrete decorator that adds dog whisperer role to users with green tag."];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="VIPUser.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$VIPUser_8h.html",tooltip="Concrete decorator that adds VIP privileges to users with priority messaging."];
 }

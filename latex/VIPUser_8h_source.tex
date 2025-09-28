@@ -1,0 +1,29 @@
+\doxysection{VIPUser.\+h}
+\hypertarget{VIPUser_8h_source}{}\label{VIPUser_8h_source}\mbox{\hyperlink{VIPUser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ VIPUSER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ VIPUSER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Decorator_8h}{Decorator.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVIPUser}{VIPUser}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDecorator}{Decorator}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classVIPUser}{VIPUser}}(\mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ user);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classVIPUser_ac581f1bb04dd3f7168c36aad009caa84}{print}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVIPUser_a825603c35fe7b2d832de81b3f6587d3a}{send}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVIPUser_aeee77c1ed794834fafbd9d5db3883395}{broadcast}}(\textcolor{keywordtype}{string}\ message)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVIPUser_ac45bdc82186b060f1be5c02f2c5d313b}{receive}}(\textcolor{keywordtype}{string}\ message,\ \mbox{\hyperlink{classAbstractUser}{AbstractUser}}*\ fromUser,\ \mbox{\hyperlink{classChatRoom}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -12,6 +12,8 @@ using namespace std;
 #include "Decorator.h"
 #include "Chataholic.h"
 #include "AnimalLover.h"
+#include "DogWhisperer.h"
+#include "VIPUser.h"
 
 void testMediatorCommand()
 {
@@ -170,7 +172,8 @@ void testDecorator()
 
     alice = new Chataholic(alice);
     bob = new AnimalLover(bob);
-    charlie = new Chataholic(charlie);
+    charlie = new DogWhisperer(charlie);
+    charlie = new VIPUser(charlie);
     cout << "   - Applied decorators to users" << endl;
     cout << "     " << alice->print() << endl;
     cout << "     " << bob->print() << endl;
@@ -234,7 +237,7 @@ void testChatRoomManagementAndBroadcast() {
     
     alice = new Chataholic(alice);
     bob = new AnimalLover(bob);
-    charlie = new Chataholic(charlie);
+    charlie = new DogWhisperer(charlie);
     cout << "   - Decorated users: " << alice->print() << ", " << bob->print() << ", " << charlie->print() << endl << endl;
     
     cout << "=== Test 1: Add users to chat rooms ===" << endl;

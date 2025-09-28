@@ -4,5 +4,7 @@ var searchData=
   ['decorator_2ecpp_1',['Decorator.cpp',['../Decorator_8cpp.html',1,'']]],
   ['decorator_2eh_2',['Decorator.h',['../Decorator_8h.html',1,'']]],
   ['dogorithm_3',['Dogorithm',['../classDogorithm.html',1,'']]],
-  ['dogorithm_2eh_4',['Dogorithm.h',['../Dogorithm_8h.html',1,'']]]
+  ['dogorithm_2eh_4',['Dogorithm.h',['../Dogorithm_8h.html',1,'']]],
+  ['dogwhisperer_5',['dogwhisperer',['../classDogWhisperer.html',1,'DogWhisperer'],['../classDogWhisperer.html#af609ea347f38281a3a53cc2c47733d90',1,'DogWhisperer::DogWhisperer()']]],
+  ['dogwhisperer_2eh_6',['DogWhisperer.h',['../DogWhisperer_8h.html',1,'']]]
 ];
