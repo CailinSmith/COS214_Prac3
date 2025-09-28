@@ -21,5 +21,5 @@ void AnimalLover::broadcast(string message) {
 
 void AnimalLover::receive(string message, AbstractUser* fromUser, ChatRoom* room) {
     string fromName = fromUser->print();
-    cout << this->print() << " reports: Message from " << fromName << " in room " << room->print() << ": " << message << endl;
+    cout << this->print() << " reports: Message from " << fromName << " in room " << room->print() << ": \n" << message << endl << endl;
 }

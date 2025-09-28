@@ -10,7 +10,9 @@ SRC = \
     ChatRoom.cpp \
     Chataholic.cpp \
     BroadcastCommand.cpp \
-    AnimalLover.cpp
+    AnimalLover.cpp \
+	DogWhisperer.cpp \
+	VIPUser.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -33,7 +35,7 @@ run: $(TARGET)
 val: $(TARGET)
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(TARGET)
 
-cov:
+coverage:
 	$(MAKE) clean
 	$(MAKE) CXXFLAGS="$(CXXFLAGS) --coverage" LDFLAGS="--coverage"
 	./$(TARGET)
