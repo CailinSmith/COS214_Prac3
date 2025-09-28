@@ -36,6 +36,11 @@ public:
 	VIPUser(AbstractUser* user);
 
 	/**
+	 * @brief Destructor.
+	 */
+	virtual ~VIPUser(){};
+
+	/**
 	 * @brief Returns the user's name with gold VIP tag
 	 * @return String containing the decorated user name with gold "(VIP)" tag
 	 */
